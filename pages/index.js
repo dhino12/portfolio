@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsTelegram, BsTwitter } from 'react-icons/bs'
 import { SiGmail } from 'react-icons/si'
 import Header from "./components/header";
 
 export default function Home() {
+  
   return (
     <>
       <Header />
@@ -27,7 +29,7 @@ export default function Home() {
               <p>I always try to create and write simple but easy to read and clean code</p>
             </div>
 
-            <Link href=""><a><h2 className="about">About.</h2></a></Link>
+            <Link href="/about"><a><h2 className="about">About.</h2></a></Link>
           </div>
         </div>
       </div>
@@ -36,13 +38,14 @@ export default function Home() {
         <div className="container">
           <div className="container-content">
             <div className="content">
+              <Image src="/asset/svg/relax.svg" layout="fill" />
             </div>
 
-            <Link href=""><a><h2 className="about">My Skills.</h2></a></Link>
+            <Link href="/skils"><a><h2 className="about">My Skills.</h2></a></Link>
           </div>
 
           <div className="container-vertical">
-            <Link href=""><a><h2>Repository</h2></a></Link>
+            <Link href="/repository"><a><h2>Repository</h2></a></Link>
           </div>
         </div>
       </div>
