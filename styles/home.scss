@@ -6,16 +6,13 @@
     left: 0;
 
     .container {
-        position: absolute;
-        width: 100%;
+        position: relative;
         height: 100%;
         display: flex;
         padding-left: 50px;
 
-        .container-vertical { 
-            flex-grow: 0;
-            position: relative;
-            width: 10%;
+        .container-vertical {  
+            position: relative; 
             height: 100%;
     
             h2 {
@@ -50,34 +47,38 @@
             }
         }
     
-        .container-content {
-            flex-grow: 1;
+        .container-content { 
             position: relative;
-            padding-left: 20vh;
+            padding-left: 10vw;
 
             .content {
                 position: relative;
                 top: 25%; 
-                height: 50%;
+                height: 55vh;
+                display: flex;
                 border-left: 2px solid #000;
                 border-top: 2px solid #000;
                 border-bottom: 2px solid #000;
-                padding-left: 30px;
-                padding-right: 30px;
+                padding: 2rem;
+                flex-direction: column;
+                justify-content: space-evenly;
 
                 h2 {
                     font-family: 'inter';
-                    font-size: 8vh;
+                    font-size: 4vw;
+
+                    span {
+                        font-family:'Gill Sans';
+                    }
                 }
 
                 p {
-                    font-size: 3.4vh;
+                    font-size: 2vw;
                     font-family: 'inter-semi';
 
                     &:last-child {
-                        font-size: 2.5vh;
+                        font-size: 1.4vw;
                         font-family: 'inter-light';
-                        margin-top: 7vh;
                         line-height: 1.6em;
                     }
                 }
@@ -87,19 +88,19 @@
         .about {
             position: absolute;
             right: 25vh;
-            bottom: 0;
+            bottom: 3vh;
         }
     }
 }
 
 header{
-    .sayHello, .logo{
+    padding-left: 50px;
+    .sayHello, .logo, button{
         margin-top: 40px;
         position: absolute;
         font-family: 'inter';
         font-size: 5vh;
         z-index: 1;
-        left: 50px;
     }
 
     .sayHello {
@@ -107,6 +108,11 @@ header{
         font-size: 2.5vh;
         left: unset;
         right: 90px;
+    }
+
+    button {
+        font-size: medium;
+        left: 48.5%;
     }
 }
 
@@ -125,7 +131,7 @@ header{
         padding-right: 50px;
 
 
-        .container-vertical{
+        .container-vertical{ 
             position: relative;
             height: 100%;
 
@@ -138,7 +144,7 @@ header{
             }
         }
 
-        .container-content {
+        .container-content { 
             position: relative;
             width: 100%;
             height: 100%;
@@ -147,32 +153,42 @@ header{
                 position: relative;
                 top: 25%;
                 width: 84%;
-                height: 50%;
+                height: 55vh;
                 border-right: 2px solid white;
                 border-top: 2px solid white;
                 border-bottom: 2px solid white;
 
                 span {
+                    left: -3px !important;
                     overflow: unset !important;
                     top: -13vh !important;
                     margin: 0 !important;
+
+                    img {
+                        top: unset !important;
+                        right: unset !important;
+                        width: unset !important;
+                        height: unset !important;
+                        min-width: unset !important;
+                        min-height: unset !important;
+                    }
                 }
             }
 
             .about {
                 position: absolute;
                 left: 25vh;
-                bottom: 0;
+                bottom: 3vh;
             }
         }
     }
 }
 
 @media only screen and(min-width: 1847px) {
-    .sd-blue{ 
-        .container { 
+    .sd-blue{
+        .container {
 
-            .container-content { 
+            .container-content {
                 .content { 
                     span {  
                     }
@@ -182,34 +198,37 @@ header{
     }
 }
 
-@media only screen and(max-width: 1030px) {
+@media only screen and(max-width: 1846px) {
+    .sd-white{
+        .container {
+            .container-content { 
+                .content {
+                }
+            }
+        }
+    }
+    
     .sd-blue{ 
         .container { 
-
             .container-content { 
                 .content { 
-                    span {
-                        position: relative;
-                        top: 50px !important;
+                    span { 
+                        left: 0 !important;
                     }
                 }
             }
         }
     }
+
+    header {
+        button {
+            position: fixed;
+            left: 48%;
+        }
+    }
+    
 }
 
 @media only screen and(max-height: 861px) {
-    .sd-blue{ 
-        .container { 
-
-            .container-content { 
-                .content { 
-                    span {
-                        position: relative;
-                        top: 50px !important;
-                    }
-                }
-            }
-        }
-    }
+    
 }

@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'inter';
-    src: url('../asset/fonts/Inter-Bold.ttf');
+    src: url('/asset/fonts/Inter-Bold.ttf');
   }
   
 @font-face {
-    font-family: 'inter-regular';
-    src: url('../asset/fonts/Inter-Regular.ttf');
+    font-family: 'inter-light';
+    src: url('/asset/fonts/Inter-Light.ttf');
 }
 
 @font-face {
     font-family: 'inter-semi';
-    src: url('../asset/fonts/Inter-SemiBold.ttf');
+    src: url('/asset/fonts/Inter-SemiBold.ttf');
 }
