@@ -12,3 +12,8 @@
     font-family: 'inter-semi';
     src: url('/asset/fonts/Inter-SemiBold.ttf');
 }
+
+@font-face {
+    font-family: 'pacifico';
+    src: url('/asset/fonts/Pacifico-Regular.ttf');
+}

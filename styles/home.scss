@@ -3,51 +3,6 @@
     background-color: #D9D9D9;
     left: 0;
     transition: 0.5s ease;
-
-    .container {
-        padding-left: 6vw;
-
-        .container-vertical {  
-            h2 {
-                left: 5px;
-            }
-            
-            .icons {
-                left: 35%;
-    
-                svg {
-                    width: 1.5em;
-                    height: 1.5em;
-                    margin: 20px auto;
-                    display: block;
-                }
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0px;
-                left: 48%;
-                width: 3px;
-                height: 13%;
-                background-color: #000;
-            }
-        }
-    
-        .container-content { 
-            padding-left: 10vw;
-
-            .content {
-                border-left: 2px solid #000;
-                border-top: 2px solid #000;
-                border-bottom: 2px solid #000;
-            }
-        }
-
-        .about {
-            right: 25%;
-        }
-    }
 }
 
 header{ 
@@ -95,15 +50,49 @@ header{
 .container {
     width: 100vw;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+    .hover-left, .hover-right, .hover-bottomLeft, .hover-bottomRight {
+        position: absolute;
+    }
+    
+    .hover-left {
+        background-color: #cfcfcf;
+        left: 0;
+        height: 100vh;
+    }
+    
+    .hover-right {
+        background-color: #62beff;
+        right: 0;
+        z-index: 1;
+        height: 100vh;
+    }
+    
+    .hover-bottomLeft {
+        background-color: #cfcfcf;
+        bottom: 0; 
+        width: 100%;
+        z-index: 1;
+    }
+
+    .hover-bottomRight {
+        background-color: #62beff;
+        bottom: 0; 
+        width: 100%;
+        z-index: 1;
+    }
 
     .nav { 
-        padding: 5vh;
+        padding: 2vh;
     
         .work {
             position: absolute;
             top: 50%;
             transform: rotate(90deg);
             transition: 1s;
+            cursor: pointer;
         }
 
         .repo {
@@ -113,6 +102,8 @@ header{
             transform: rotate(90deg);
             transition: 1s;
             color: white;
+            cursor: pointer;
+            z-index: 1;
         }
 
         .sosmed {
@@ -132,7 +123,6 @@ header{
             }
 
             span {
-                content: "";
                 position: relative;
                 bottom: 0px;
                 left: 48%;
@@ -147,6 +137,8 @@ header{
             bottom: 5vh;
             left: 35%;
             transition: 1s;
+            cursor: pointer;
+            z-index: 1;
         }
 
         .myskill {
@@ -155,6 +147,8 @@ header{
             bottom: 5vh;
             right: 35%;
             transition: 1s;
+            cursor: pointer;
+            z-index: 1;
         }
     }
 
@@ -165,7 +159,6 @@ header{
         top: 50%;
         left: 50%;
         display: flex;
-        transition: 1s ease-out;
 
         .left-content{
             width: 50%;
