@@ -1,43 +1,51 @@
 import Image from "next/image";
 import Lottie from "lottie-react";
 import Link from "next/link";
-import { BsGithub, BsTelegram, BsTwitter } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
 import { motion } from "framer-motion";
+import Sosmed from "./components/Sosmed";
 import Header from "./components/header";
-import animationData from "../public/asset/animation/data.json";
+import NavHover from "./components/navHover";
+import NavClicked from "./components/navClicked";
+import animationData from "../public/asset/animation/data2.json";
 import { useEffect, useState } from "react";
-import useMediaQuery from "./hooks/useMediaQuery";
 import {
     bgBlueVariants,
     bottomVariants,
-    containerVariants, 
+    containerVariants,
     contentVariants,
     introVariants,
     leftVariants,
     opacityVariants,
     rightVariants,
-    sosmedVariants,
-    sosmedWrapperVariants,
     textContentVariants,
 } from "./variants/homeVariants";
-import NavHover from "./components/navHover";
+import {
+    bottomLeftHoverVariants,
+    bottomRightHoverVariants,
+    leftHoverVariants,
+    rightHoverVariants,
+} from "./variants/hoverVariants";
+import { bottomLeftClicked, bottomRightClicked, leftClicked, rightClicked } from "./variants/clickVariants";
 
 export default function Home() {
-    const [navHover, setNavHover] = useState({ });
+    const [navHover, setNavHover] = useState({});
+    const [navClicked, setnavClicked] = useState({});
 
     useEffect(() => {
         setTimeout(() => {
-            const contentSelector = document.querySelector('.content')
+            const contentSelector = document.querySelector(".content");
             if (contentSelector) {
-                contentSelector.setAttribute('style', 'transition: 1s ease-out;')
+                contentSelector.setAttribute(
+                    "style",
+                    "transition: 1s ease-out;"
+                );
             }
-            console.log('re-render');
+            console.log("re-render");
         }, 3500);
-    })
+    });
 
-    return (	
-        <>
+    return (
+        <> 
             <Header />
             <motion.div
                 className="container"
@@ -45,88 +53,71 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-            > 
-                {
-                    navHover.left || navHover.right ? (
-                        <NavHover 
-                            classHover={`hover-${Object.keys(navHover)[0]}`}
-                            initial={{width: 0}} 
-                            animate={{width: 150}} />
-                    ) : (<> </>) 
-                }
-                {
-                    navHover.bottomLeft || navHover.bottomRight ? (
-                        <NavHover 
-                            classHover={`hover-${Object.keys(navHover)[0]}`}
-                            initial={{height: 0}} 
-                            animate={{height: '15vh'}} />
-                    ) : (<> </>)
-                }
+            >
+                <NavHover navStyle={navHover} />
+                <NavClicked navStyle={navClicked} />
+
                 <motion.div
                     className="sd-blue"
                     variants={bgBlueVariants}
                 ></motion.div>
                 <div className="nav">
                     <Link href="/certificate">
-                        <motion.a 
-                            className="work" 
+                        <motion.a
+                            className="work"
                             variants={leftVariants}
-                            onHoverStart={setNavHover.bind(this, {left: true})}
-                            onHoverEnd={setNavHover.bind(this, {left: false})}>
+                            onHoverStart={setNavHover.bind(
+                                this,
+                                leftHoverVariants
+                            )}
+                            onHoverEnd={setNavHover.bind(this, {})}
+                            onClick={setnavClicked.bind(this, leftClicked)}
+                        >
                             <h2>Certificate</h2>
                         </motion.a>
                     </Link>
                     <Link href="/repository">
-                        <motion.a 
-                            className="repo" 
+                        <motion.a
+                            className="repo"
                             variants={rightVariants}
-                            onHoverStart={setNavHover.bind(this, {right: true})}
-                            onHoverEnd={setNavHover.bind(this, {right: false})}>
+                            onHoverStart={setNavHover.bind(
+                                this,
+                                rightHoverVariants
+                            )}
+                            onHoverEnd={setNavHover.bind(this, {})}
+                            onClick={setnavClicked.bind(this, rightClicked)}
+                        >
                             <h2>Repository</h2>
                         </motion.a>
                     </Link>
-
-                    <motion.div
-                        className="sosmed"
-                        variants={sosmedWrapperVariants}
-                    >
-                        <Link href="https://github.com/Dhino12">
-                            <motion.a variants={sosmedVariants}>
-                                <BsGithub />
-                            </motion.a>
-                        </Link>
-                        <Link href="/telegram">
-                            <motion.a variants={sosmedVariants}>
-                                <BsTelegram />
-                            </motion.a>
-                        </Link>
-                        <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=dhinorahmad0@gmail.com">
-                            <motion.a variants={sosmedVariants}>
-                                <SiGmail />
-                            </motion.a>
-                        </Link>
-                        <Link href="/twitter">
-                            <motion.a variants={sosmedVariants}>
-                                <BsTwitter />
-                            </motion.a>
-                        </Link>
-                        <motion.span
-                            initial={{ y: "10vh" }}
-                            animate={{ y: 0 }}
-                        ></motion.span>
-                    </motion.div>
+                        
+                    <Sosmed />
 
                     <Link href="/about">
-                        <motion.a className="about" variants={bottomVariants}
-                            onHoverStart={setNavHover.bind(this, {bottomLeft: true})}
-                            onHoverEnd={setNavHover.bind(this, {bottomLeft: false})}>
+                        <motion.a
+                            className="about"
+                            variants={bottomVariants}
+                            onHoverStart={setNavHover.bind(
+                                this,
+                                bottomLeftHoverVariants
+                            )}
+                            onHoverEnd={setNavHover.bind(this, {})}
+                            onClick={setnavClicked.bind(this, bottomLeftClicked)}
+                        >
                             <h2>About.</h2>
                         </motion.a>
                     </Link>
                     <Link href="/myskill">
-                        <motion.a className="myskill" variants={bottomVariants}
-                            onHoverStart={setNavHover.bind(this, {bottomRight: true})}
-                            onHoverEnd={setNavHover.bind(this, {bottomRight: false})}>
+                        <motion.a
+                            className="myskill"
+                            variants={bottomVariants}
+                            onHoverStart={setNavHover.bind(
+                                this,
+                                bottomRightHoverVariants
+                            )}
+                            onHoverEnd={setNavHover.bind(this, {})}
+                            onClick={setnavClicked.bind(this, bottomRightClicked)}
+                        >
                             <h2>My Skill.</h2>
                         </motion.a>
                     </Link>
@@ -154,19 +145,14 @@ export default function Home() {
                             </motion.p>
                         </motion.div>
                     </div>
-                    <motion.div
-                        className="right-content"
-                    >
-                        <motion.div 
-                            variants={opacityVariants}
-                            >
-                        {/* <Image src="/asset/svg/relax.svg" layout="fill" /> */}
-                        <Lottie
-                            animationData={animationData}
-                            loop={true}
-                            renderer="svg"
-                        />
-
+                    <motion.div className="right-content">
+                        <motion.div variants={opacityVariants}>
+                            {/* <Image src="/asset/svg/relax.svg" layout="fill" /> */}
+                            <Lottie
+                                animationData={animationData}
+                                loop={true}
+                                renderer="svg"
+                            />
                         </motion.div>
                     </motion.div>
                 </motion.div>

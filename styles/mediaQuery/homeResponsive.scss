@@ -89,9 +89,9 @@
                 width: 50vw; 
                 height: 100%;
                 border-top: unset;
-                border-left: 2px solid white;
-                border-right: 2px solid white;
-                border-bottom: 2px solid white;
+                border-left: 2px solid black;
+                border-right: 2px solid black;
+                border-bottom: 2px solid black;
                 padding: 0;
             }
         }
@@ -99,28 +99,20 @@
         .nav {
 
             .about {
-                font-size: 2.5vw;
-                color: white;
+                font-size: 2.5vw; 
                 left: 25%;
             }
 
             .myskill {
-                font-size: 2.5vw;
-                color: white;
+                font-size: 2.5vw; 
                 right: 25%;
-            }
-
-            .work {
-                color: white; 
-            }
+            } 
 
             .sosmed {
                 svg {
-                    width: 5vw; 
-                    fill: white;
+                    width: 5vw;  
                 }
-                span {
-                    background-color: white;
+                span { 
                     
                 }
             }
@@ -175,19 +167,16 @@
 
         .nav {
             .about {
-                font-size: 2.5vw;
-                color: white;
+                font-size: 2.5vw; 
                 left: 25%;
             }
 
             .myskill {
-                font-size: 2.5vw;
-                color: white;
+                font-size: 2.5vw; 
                 right: 25%;
             }
 
-            .work {
-                color: white;
+            .work { 
                 font-size: 2.5vw;
             }
 
@@ -198,12 +187,7 @@
             .sosmed {
                 svg {
                     width: 5vw;
-                    margin: 4px auto;
-                    fill: white;
-                }
-
-                span {
-                    background-color: white;
+                    margin: 4px auto; 
                 }
             }
         }

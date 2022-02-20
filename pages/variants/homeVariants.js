@@ -11,28 +11,24 @@ const sosmedWrapperVariants = {
             when: "beforeChildren",
             staggerChildren: 0.4,
         },
-    },
-    exit: {
-        transition: { ease: "easeInOut" },
-    },
+    }
 };
 
 const containerVariants = {
-    hidden: {
-        
+    hidden: { 
+        opacity: 0
     },
-    visible: {
+    visible: { 
+        opacity: 1,
         transition: {
-            type: "spring",
-            mass: 0.2,
-            damping: 4,
+            type: "fill",
             when: "beforeChildren",
             staggerChildren: 0.6
         },
     },
     exit: {
         opacity: 0,
-        transition: { delay: 2, duration: 0.5 },
+        transition: {duration: 1},
     },
 };
 
@@ -69,6 +65,9 @@ const contentVariants = {
             ease: 'easeInOut'
         },
     },
+    exit: {
+        scale: 0
+    }
 };
 
 const textContentVariants = {
