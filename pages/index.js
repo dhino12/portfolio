@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image"; not support static next
 import Lottie from "lottie-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
