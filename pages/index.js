@@ -2,10 +2,10 @@ import Image from "next/image";
 import Lottie from "lottie-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Sosmed from "./components/Sosmed";
-import Header from "./components/header";
-import NavHover from "./components/navHover";
-import NavClicked from "./components/navClicked";
+import Sosmed from "../components/Sosmed";
+import Header from "../components/header";
+import NavHover from "../components/NavHover";
+import NavClicked from "../components/NavClicked";
 import animationData from "../public/asset/animation/data2.json";
 import { useEffect, useState } from "react";
 import {
@@ -18,14 +18,14 @@ import {
     opacityVariants,
     rightVariants,
     textContentVariants,
-} from "./variants/homeVariants";
+} from "../variants/homeVariants";
 import {
     bottomLeftHoverVariants,
     bottomRightHoverVariants,
     leftHoverVariants,
     rightHoverVariants,
-} from "./variants/hoverVariants";
-import { bottomLeftClicked, bottomRightClicked, leftClicked, rightClicked } from "./variants/clickVariants";
+} from "../variants/hoverVariants";
+import { bottomLeftClicked, bottomRightClicked, leftClicked, rightClicked } from "../variants/clickVariants";
 
 export default function Home() {
     const [navHover, setNavHover] = useState({});

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion"
 import { useEffect } from "react";
-import Header from "./components/header"
-import Sosmed from "./components/Sosmed";
+import Header from "../components/header"
+import Sosmed from "../components/Sosmed";
 import {
     containerVariants,
-} from "./variants/homeVariants";
+} from "../variants/homeVariants";
 
 export default function Certificate() {
 
