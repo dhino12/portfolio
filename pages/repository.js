@@ -57,8 +57,7 @@ function Repository({dataRepo}) {
             <Header />
 
             <motion.div
-                className="container"
-                style={{ height: "200vh" }}
+                className="container repo-responsive"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
