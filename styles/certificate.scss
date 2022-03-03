@@ -1,3 +1,207 @@
 body {
     
 }
+
+.container-certif{  
+    position: relative;
+
+    .page-name{
+        .vertical-right {
+            position: fixed;
+            top: 50%;
+            right: 1vh;
+            font-size: 3vw;
+            transform: rotate(90deg);
+            transition: 1s;  
+            z-index: 0;
+            opacity: 0.1;
+            color: #781D42;
+            letter-spacing: 10px;
+            font-family: 'inter-light';
+            
+            &:hover{
+                top: 50%;
+                letter-spacing: 15px;
+            }
+        }
+    }
+
+    .modal-wrapper {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.288);
+        position: fixed;
+        z-index: 1;
+
+        .modal-content {
+            width: 75%;
+            height: 80%;
+            background-color: #A3423C;
+            position: fixed;
+            left: 15%;
+            top: 10%;
+            display: flex;
+            overflow: hidden;
+            
+            .side {
+                width: 15%;
+                height: 100%;
+                text-align: center;
+                cursor: pointer;
+                z-index: 1;
+                transition: .5s ease;
+
+                svg {
+                    width: 3vw;
+                    height: auto;
+                    position: absolute;
+                    top: 40%;
+
+                }
+
+                &:hover {
+                    background-color: #2c2c2c71;
+                    polyline {
+                        stroke: white;
+                    }
+                }
+            }
+
+            .button {
+                width: 50vw;
+                height: 5vh;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 10px;
+                left: 16%;
+
+                button {
+                    width: 10vh;
+                    border-radius: .5vh;
+                    border: 0;
+                    margin-left: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #ffadce;
+                    }
+                }
+            }
+
+            .img-wrapper {
+                width: 75%;
+                height: 91%;
+                margin: 0 auto;
+                
+                .img-slide{
+                    width: 152vw;
+                    height: 100%;
+                    display: flex;
+
+                    .img {
+                        width: 54vw;
+                        height: 100%;
+                        background-size: 50vw;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-certif{
+        width: 125vh;
+        transform: translate(-50%, 8%);
+        position: relative;
+        left: 50%; 
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10vh;
+        justify-content: space-between;
+
+        .card {
+            width: 59vh;
+            height: 40vh;
+            background-color: #fffac367;
+            border: 2px solid #A3423C;
+            margin-bottom: 50px;
+            margin-right: 5px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+            justify-content: space-between;
+            transition: 0.5s ease;
+
+            .img-certif {
+                background-size: cover;
+                background-position-y: -50px;
+                width: 100%;
+                height: 60%;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+                border-bottom: 2px solid black;
+            }
+
+            .tag {
+                display: inline-block;
+                
+                p{
+                    padding: 5px;
+                    width: 100%;
+                    display: inline;
+                    margin-right: 1vw; 
+                }
+            }
+        }
+
+        .card:hover {
+            background-color: #ffe597; 
+            box-shadow: 5px 10px #781D42;
+            margin-top: -5px;
+            margin-left: -5px;
+            cursor: pointer;
+
+            h2 {
+                // border-bottom: 2px solid white;
+            }
+        }
+    }
+
+    .nav { 
+        padding: 2vh;
+
+        .sosmed {
+            height: 30vh;
+            position: fixed;
+            bottom: 0;
+            left: 7vh;
+            display: flex;
+            flex-direction: column; 
+
+            svg {
+                width: 1.6em;
+                height: 1.6em;
+                margin: 8px auto;
+                display: block;
+                transition: 1s;
+                fill: #781D42;
+            }
+
+            span {
+                position: relative;
+                bottom: 0px;
+                left: 48%;
+                width: 3px;
+                height: 100%;
+                background-color: #781D42;
+            }
+        }
+    }
+}

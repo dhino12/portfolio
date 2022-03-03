@@ -1,0 +1,111 @@
+@media only screen and(min-width: 862px) and (max-width: 1278px) {
+    .container {
+        .content-slider {
+            left: 1vw;
+
+            .card { 
+
+                .clothspin {
+                    width: 18vw;
+                }
+
+                h2 {
+                    font-size: 2vw;
+                }
+
+                p {
+                    font-size: 1.5vw;
+                }
+
+                div {
+
+                    button {
+                        width: 12vw;
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 861px) {
+    .container {
+        .ropes {
+            top: 23vw;
+        }
+        .content-slider {
+            left: 1vw;
+            top: 20vw;
+
+            .card {
+                width: 50vw; 
+                height: 25rem;
+                padding: 5.5vw;
+
+                .clothspin {
+                    width: 58vw;
+                }
+
+                h2 {
+                    font-size: 4vw;
+                }
+
+                p {
+                    font-size: 2vw;
+                }
+
+                div {
+                    button {
+                        width: 32vw;
+                        font-size: 4vw;
+                    }
+
+                    svg {
+                        width: 9.8vw;
+                        height: 4.8vw;
+                        margin-top: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 562px) {
+    .container {
+        .ropes {
+            top: 38vw;
+        }
+        .content-slider {
+            left: 1vw;
+            top: 35vw;
+
+            .card {
+                width: 80vw; 
+                height: 40vh;
+                padding: 5.5vw;
+
+                .clothspin {
+                    width: 58vw;
+                }
+
+                h2 {
+                    font-size: 5vw;
+                }
+
+                p {
+                    font-size: 3.5vw;
+                }
+
+                div {
+
+                    button {
+                        width: 32vw;
+                        font-size: 4vw;
+                    }
+                }
+            }
+        }
+    }
+}

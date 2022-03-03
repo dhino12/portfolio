@@ -1,0 +1,93 @@
+@media only screen and(min-width: 862px) and (max-width: 1278px) {
+    .container {
+        .content-slider {
+            left: 1vw;
+
+            .card { 
+
+                .clothspin {
+                    width: 18vw;
+                }
+
+                h2 {
+                    font-size: 2vw;
+                }
+
+                p {
+                    font-size: 1.5vw;
+                }
+
+                button {
+                    width: 12vw;
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 861px) {
+    .container { 
+        .windowProgram {
+            padding: 5vw;
+
+            .programName {
+                font-size: 1.5vw;
+                top: 1.5vw;
+                left: 5vw;
+            }
+
+            .close {
+                top: 1vw;
+                right: 5vw;
+                padding: unset;
+
+                svg {
+                    width: 3vw;
+                }
+            }
+
+            .contentProgram {
+                padding: 3vw;
+                
+                p {
+                    line-height: 2.5vh;
+                    font-size: 2vw;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 562px) {
+    .container { 
+        .windowProgram {
+            padding: 5vw;
+
+            .programName {
+                font-size: 1.5vw;
+                top: 1.5vw;
+                left: 5vw;
+            }
+
+            .close {
+                top: 1vw;
+                right: 5vw;
+                padding: unset;
+
+                svg {
+                    width: 3vw;
+                }
+            }
+
+            .contentProgram {
+                padding: 5vw;
+                
+                p {
+                    line-height: 1.8vh;
+                    font-size: 2.4vw;
+                }
+            }
+        }
+    }
+}

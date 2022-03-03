@@ -1,0 +1,55 @@
+@media only screen and(min-width: 862px) and (max-width: 1278px) {
+    .container-certif {
+        .content-certif {
+            width: 100%; 
+            transform: translate(-50%, 8%);
+            left: 50%;
+            justify-content: center;
+
+            .card {
+                width: 39vw;
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 861px) {
+    .container-certif {
+        .content-certif {
+            width: 100%;
+            transform: translate(-50%, 8%);
+            left: 75%;
+        }
+    }
+}
+
+@media only screen and(max-width: 562px) {
+    .container-certif {
+        .content-certif {
+            width: unset;
+            transform: translate(-50%, 8%);
+            left: 77vw;
+
+            .card {
+                width: 81vw;
+
+                h2 {
+                    font-size: 5vw;
+                }
+
+                p {
+                    font-size: 4vw;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-height: 400px){
+    .container-certif {
+        .content-certif {
+            width: unset;
+            left: 77vw;
+        }
+    }
+}

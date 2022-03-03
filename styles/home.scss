@@ -1,12 +1,15 @@
 // spesifik style
 
 header{ 
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+
     .sayHello, .logo, button{
         margin-top: 40px;
         margin-left: 40px;
         margin-right: 40px;
         position: absolute;
-        z-index: 3;
         font-family: 'inter';
         font-size: 5vh; 
     }
@@ -26,25 +29,10 @@ header{
 
     button {
         font-size: medium;
-        left: 46.4%;
+        left: 47.7%;
         transform: translate(-50%, 0px);
     }
-}
 
-.bg-darkYellow {
-    width: 100%;
-    height: 100%; 
-    position: fixed;
-    background-color: #FFEEBB;
-    transition: 1s ease;
-}
-
-.bg-lightYellow {
-    width: 100%;
-    height: 100%; 
-    position: fixed;
-    background-color: #FFFCDC;;
-    transition: 1s ease;
 }
 
 .sd-blue{
@@ -57,12 +45,69 @@ header{
     transition: 1s ease;
 }
 
-.container {
-    width: 100vw;
+.container { 
     height: 100vh;
     position: relative;
     overflow: hidden;
     
+    .windowProgram {
+        position: fixed;
+        left: 25%;
+        top: 20vh;
+        width: 50vw;
+        height: 50vh;
+        background-color: #fdefc6af;
+        border: 2px solid #A3423C;
+        padding: 50px;
+
+        .programName {
+            position: absolute;
+            left: 2.8vw;
+            top: 16px;
+            font-size: 10px;
+
+            h2 {
+                margin: 0;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 6px;
+            right: 6vh;
+            padding: 5px;
+            transition: .5s ease;
+
+            svg {
+                width: 3vh;
+                height: auto;
+            }
+
+            &:hover {
+                background-color: #A3423C;
+                cursor: pointer;
+
+                svg {
+                    path {
+                        stroke: white;
+                    }
+                }
+            }
+        }
+
+        .contentProgram {
+            width: 100%;
+            height: 100%;
+            border: 2px solid#A3423C;
+            padding: 50px;
+
+            p {
+                line-height: 2vw;
+                font-size: 1.1vw;
+            }
+        }
+    }
+
     .hover-left, .hover-right, .hover-bottomLeft, .hover-bottomRight {
         position: absolute;
     }
@@ -128,7 +173,7 @@ header{
                 height: 1.6em;
                 margin: 8px auto;
                 display: block;
-                transition: 1s;
+                transition: 1s
             }
 
             span {
@@ -157,6 +202,167 @@ header{
             transition: 1s;
             cursor: pointer;
             z-index: 1;
+        }
+    }
+
+    .ropes{
+        width: 400vh;
+        height: 4vh;
+        background-image: url("../public/asset/png/ropes.png");
+        background-repeat: repeat-x;
+        background-size: 28vh ;
+        position: fixed;
+        top: 13rem;
+    }
+    
+    .title-repo {
+        position: fixed;
+        z-index: 1;
+        font-size: 4rem;
+        font-family: 'inter-semi';
+        bottom: 10vh;
+        right: -20vh;
+        opacity: 0.2;
+        letter-spacing: 10px;
+        color: #A3423C;
+    }
+
+    .frame {
+        width: 100%;
+        height: 40vw;
+        background-image: url("../public/asset/png/frame.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 38vw;
+    }
+    
+    .content-myskill {
+        width: 39vw; 
+        position: fixed;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        display: flex;
+
+        .skill {
+            width: 28vw;
+            height: 28vw;
+            border: 1px solid #A3423C;
+            position: absolute;
+            top: 5vw;
+            left: 16%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2vw;
+            font-size: 1vw;
+            color: #A3423C;
+        }
+    }
+
+    .content-slider { 
+        height: 50vh;
+        transform: translateX(10px);
+        position: fixed;
+        top: 12rem;
+        left: calc(10rem + 15vw);
+        padding-top: 5vh;
+        padding-left: 4vh;
+        display: flex;
+        justify-content: space-around;
+
+        .card {
+            width: 19rem;
+            height: 40vh; 
+            border-top-right-radius: 7vh;
+            border-bottom-left-radius: 7vh;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5vw;
+            background-color: #fff4e6;
+            border: 2px solid #A3423C;
+            margin-right: 8rem;
+            z-index: 1;
+            transition: .5s ease;
+
+            .clothspin{
+                width: 10vw;
+                height: 65px;
+                position: absolute;
+                top: -5px; 
+                background-image: url("../public/asset/png/pin2.png");
+                background-size: 50px;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: rotate(10deg);
+            }
+
+            h2 {
+                font-size: 1.2vw;
+                padding-bottom: 10px;
+                border-bottom: 3px solid #A3423C;
+            }
+            
+            p {
+                font-size: 0.9vw;
+                line-height: 20px;
+            }
+
+            .tag {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                
+                p {
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+            }
+
+            div {
+                display: flex;
+
+                button {
+                    height: 4vh;
+                    width: 8vw;
+                    border-radius: 0 0 0 50px;
+                    border: 0;
+                    background-color: #A3423C;
+                    color: white;
+                    font-size: 0.9vw;
+                }
+
+                svg {
+                    width: 1.8vw;
+                    height: 1.8vw;
+                    margin-top: 4px;
+                    margin-left: 3vw;
+                    fill: #A3423C;
+                }
+            }
+
+            &:hover{
+                background-color: #A3423C;
+                color: white;
+                
+                h2 {
+                    border-bottom: 3px solid #FFEEBB;
+                }
+                
+                div {
+                    button{
+                        background-color: #fff4e6;
+                        color: #000;
+                        cursor: pointer;
+                    }
+                    
+                    svg {
+                        cursor: pointer;
+                        fill: white;
+                    }
+                }
+            }
         }
     }
 
