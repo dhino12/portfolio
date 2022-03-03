@@ -12,18 +12,18 @@ import {
 } from "../variants/certifVariants";
 import { containerVariants } from "../variants/homeVariants";
 
-export async function getServerSideProps() {
-    const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
-    const dataRepo = await dataReq.json(); 
+// export async function getInitialProps() {
+//     const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
+//     const dataRepo = await dataReq.json(); 
     
-    return {
-        props: {
-            dataRepo
-        }
-    }
-}
+//     return {
+//         props: {
+//             dataRepo
+//         }
+//     }
+// }
 
-export default function Repository({dataRepo}) {
+function Repository({dataRepo}) {
     const contentRef = useRef(null);
     const ropesRef = useRef(null);
     const bgRepoRef = useRef(null);
@@ -116,3 +116,14 @@ export default function Repository({dataRepo}) {
         </>
     );
 }
+
+Repository.getInitialProps = async () => {
+    const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
+    const dataRepo = await dataReq.json(); 
+    
+    return {
+        dataRepo
+    }   
+}
+
+export default Repository;
