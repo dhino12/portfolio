@@ -39,8 +39,7 @@ export default function Home() {
                     "style",
                     "transition: 1s ease-out;"
                 );
-            }
-            console.log("re-render");
+            } 
         }, 3500);
     });
 
