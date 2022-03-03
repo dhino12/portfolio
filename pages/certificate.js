@@ -1,5 +1,4 @@
-import { motion } from "framer-motion"
-import Image from "next/image";
+import { motion } from "framer-motion" 
 import { useEffect, useState } from "react";
 import Header from "../components/header"
 import ModalCertif from "../components/ModalCertif";
