@@ -1,5 +1,7 @@
 @media only screen and(min-width: 862px) and (max-width: 1278px) {
     .container {
+        height: 224vh;
+
         .content-slider {
             left: 1vw;
 
@@ -31,6 +33,8 @@
 
 @media only screen and(max-width: 861px) {
     .container {
+        height: 320vh;
+
         .ropes {
             top: 23vw;
         }
@@ -74,6 +78,8 @@
 
 @media only screen and(max-width: 562px) {
     .container {
+        height: 355vh;
+
         .ropes {
             top: 38vw;
         }
