@@ -10,26 +10,38 @@ export default function Sosmed () {
             className="sosmed"
             variants={sosmedWrapperVariants}
         >
-            <Link href="https://github.com/Dhino12">
-                <motion.a variants={sosmedVariants}>
-                    <BsGithub />
-                </motion.a>
-            </Link>
-            <Link href="/telegram">
-                <motion.a variants={sosmedVariants}>
-                    <BsTelegram />
-                </motion.a>
-            </Link>
-            <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=dhinorahmad0@gmail.com">
-                <motion.a variants={sosmedVariants}>
-                    <SiGmail />
-                </motion.a>
-            </Link>
-            <Link href="/twitter">
-                <motion.a variants={sosmedVariants}>
-                    <BsTwitter />
-                </motion.a>
-            </Link>
+            <motion.div variants={sosmedVariants}>
+                <Link href="https://github.com/Dhino12">
+                    <a>
+                        <BsGithub />
+                    </a>
+                </Link>
+            </motion.div>
+
+            <motion.div variants={sosmedVariants}>
+                <Link href="/">
+                    <a>
+                        <BsTelegram />
+                    </a>
+                </Link>
+            </motion.div>
+
+            <motion.div variants={sosmedVariants}>
+                <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=dhinorahmad0@gmail.com">
+                    <a>
+                        <SiGmail />
+                    </a>
+                </Link>
+            </motion.div>
+
+            <motion.div variants={sosmedVariants}>
+                <Link href="/">
+                    <a>
+                        <BsTwitter />
+                    </a>
+                </Link>
+            </motion.div>
+
             <motion.span
                 initial={{ y: "10vh" }}
                 animate={{ y: 0 }}
