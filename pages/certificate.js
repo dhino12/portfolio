@@ -13,12 +13,6 @@ export default function Certificate() {
 
     const [dataCertif, setDataCertif] = useState({});
 
-    console.log(dataCertif);
-
-    useEffect(() => {
-        
-    })
-
     return (
         <>   
             <motion.div 
