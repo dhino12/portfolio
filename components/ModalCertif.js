@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import { GrNext, GrPrevious } from 'react-icons/gr'
+import { motion } from "framer-motion";
 
 export default function ModalCertif ({ dataCertif, setData}) {   
     if (Object.keys(dataCertif).length === 0 || dataCertif.foto === undefined) {
@@ -52,8 +53,17 @@ export default function ModalCertif ({ dataCertif, setData}) {
     },[])
 
     return (
-        <div className="modal-wrapper">
-            <div className="modal-content">
+        <motion.div 
+            className="modal-wrapper"
+            initial={{opacity: '0'}}
+            animate={{opacity: '1'}}
+            exit={{opacity: '0'}}
+        >
+            <motion.div 
+                className="modal-content"
+                initial={{top: '-80%'}}
+                animate={{top: '10%'}}
+                exit={{top: '-80%'}}>
                 <div className="side" ref={prev}><GrPrevious /></div>
                 <div className="img-wrapper">
                     <div className="img-slide" ref={imgSlide}>
@@ -68,7 +78,7 @@ export default function ModalCertif ({ dataCertif, setData}) {
                     <button>QRCode</button>
                     <button onClick={setData.bind({})}>Close</button>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }
