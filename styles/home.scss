@@ -45,6 +45,10 @@ header{
     transition: 1s ease;
 }
 
+.repo-responsive {
+    height: 224vh;
+}
+
 .container { 
     height: 100vh;
     position: relative;
@@ -322,22 +326,21 @@ header{
 
             div {
                 display: flex;
+                justify-content:space-between;
 
                 button {
                     height: 4vh;
-                    width: 8vw;
+                    width: 16vh;
                     border-radius: 0 0 0 50px;
                     border: 0;
                     background-color: #A3423C;
                     color: white;
-                    font-size: 0.9vw;
+                    font-size: 2.2vh;
                 }
 
                 svg {
-                    width: 1.8vw;
-                    height: 1.8vw;
-                    margin-top: 4px;
-                    margin-left: 3vw;
+                    width: 3.2vh;
+                    height: auto;
                     fill: #A3423C;
                 }
             }
