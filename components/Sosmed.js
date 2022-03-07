@@ -19,7 +19,7 @@ export default function Sosmed () {
             </motion.div>
 
             <motion.div variants={sosmedVariants}>
-                <Link href="/">
+                <Link href="https://t.me/dhino_rahmad">
                     <a>
                         <BsTelegram />
                     </a>
