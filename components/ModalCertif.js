@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { GrNext, GrPrevious } from 'react-icons/gr'
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ModalCertif ({ dataCertif, setData}) {   
     if (Object.keys(dataCertif).length === 0 || dataCertif.foto === undefined) {
@@ -74,8 +75,7 @@ export default function ModalCertif ({ dataCertif, setData}) {
                 </div>
                 <div className="side" ref={next}><GrNext /></div>
                 <div className="button">
-                    <button>unduh</button>
-                    <button>QRCode</button>
+                    <Link href={dataCertif.pdf}><a><button>unduh</button></a></Link>
                     <button onClick={setData.bind({})}>Close</button>
                 </div>
             </motion.div>
