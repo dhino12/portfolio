@@ -47,6 +47,18 @@ const certif = [
         foto: ['https://i.solidfiles.com/vN4VaQ5XGzm2m.png'],
         date: 'Tuesday,18 July 2020'
     },
+    {
+        name: 'Teknik Komputer dan Jaringan - LSP',
+        tag: ['#mikrotik', '#networking', '#switch', '#LSP'],
+        foto: ['https://i.solidfiles.com/MW5reMBmwrAwB.png', 'https://i.solidfiles.com/YLzApPjRXe6VX.png'],
+        date: '17 June 2019'
+    },
+    {
+        name: 'PRAKERIN (PRAKTEK KERJA INDUSTRI)',
+        tag: ['#mikrotik', '#networking'],
+        foto: ['https://i.solidfiles.com/78AywrapWgBgz.png', 'https://i.solidfiles.com/2dvDmRL4j8dGz.png'],
+        date: 'June 2018'
+    },
 ]
 
 export default certif;
