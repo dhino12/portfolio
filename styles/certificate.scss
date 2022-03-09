@@ -76,6 +76,21 @@ body {
                 bottom: 10px;
                 left: 16%;
 
+                a {
+                    button {
+                        width: 10vh;
+                        height: 100%;
+                        border-radius: .5vh;
+                        border: 0;
+                        margin-left: 20px;
+                        cursor: pointer;
+    
+                        &:hover {
+                            background-color: #ffadce;
+                        }
+                    }
+                }
+
                 button {
                     width: 10vh;
                     border-radius: .5vh;
