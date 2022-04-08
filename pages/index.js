@@ -123,7 +123,7 @@ export default function Home() {
                 </div>
 
                 <motion.div
-                    className="content"
+                    className="content center"
                     variants={contentVariants}
                     initial="hidden"
                     animate="visible"
@@ -146,7 +146,6 @@ export default function Home() {
                     </div>
                     <motion.div className="right-content">
                         <motion.div variants={opacityVariants}>
-                            {/* <Image src="/asset/svg/relax.svg" layout="fill" /> */}
                             <Lottie
                                 animationData={animationData}
                                 loop={true}
