@@ -241,10 +241,6 @@ header{
     
     .content-myskill {
         width: 39vw; 
-        position: fixed;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
         padding: 10vh;
         display: flex;
 
@@ -366,12 +362,15 @@ header{
         }
     }
 
-    .content {
-        width: 65vw; 
+    .center {
         position: fixed;
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
+    }
+
+    .content {
+        width: 65vw; 
         display: flex;
 
         .left-content{

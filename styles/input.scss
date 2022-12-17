@@ -25,6 +25,10 @@
                     cursor: pointer;
                 }
             }
+            
+            .active {
+                background-color: #FFEEBB;
+            }
         }
     }
 
@@ -57,22 +61,24 @@
                 border: none;
             }
     
-            button {
-                width: 100%;
-                padding: 1.5vh;
-                margin-right: 10px;
-                margin-left: 10px;
-                border-radius: 1vh;
-                border: 0;
-                background-color: #FFFCDC;
-                transition: .5s ease;
-                cursor: pointer;
-                position: relative;
-
-                &:hover {
-                    transform: translate(-2px, -2px);
-                    box-shadow: 3px 3px 2px rgb(104, 104, 104);
-                    border: none;
+            span {
+                input ,button {
+                    width: 100%;
+                    padding: 1.5vh;
+                    margin-right: 10px;
+                    margin-left: 10px;
+                    border-radius: 1vh;
+                    border: 0;
+                    background-color: #FFFCDC;
+                    transition: .5s ease;
+                    cursor: pointer;
+                    position: relative;
+    
+                    &:hover {
+                        transform: translate(-2px, -2px);
+                        box-shadow: 3px 3px 2px rgb(104, 104, 104);
+                        border: none;
+                    }
                 }
             }
         }

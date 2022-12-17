@@ -24,7 +24,7 @@ export default function MySkill() {
                     <Sosmed />
                 </div>
 
-                <div className="content-myskill frame">
+                <div className="content-myskill center frame">
                     <div className="skill">
                         <center><h2>Front-end Developer</h2></center>
                         <p>{mySkill.desc}</p>

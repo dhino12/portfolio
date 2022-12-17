@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { unAuth } from "../../middleware/authorization"
 import NavDashboard from "../../components/NavDashboard"
 
@@ -17,6 +17,10 @@ export async function getServerSideProps(ctx) {
 
 export default function Personal({ dataPersonal }) {
     
+    const inFullName = useRef(null);
+    const inDesc = useRef(null);
+    const inShortDesc = useRef(null);
+
     const [fields, setFields] = useState({
         name: '',
         descpersonal: '',
@@ -28,6 +32,7 @@ export default function Personal({ dataPersonal }) {
 
     useEffect(() => {
         contentHandler(dataPersonal);
+        console.log('re-render');
     }, []);
 
     async function inputData(e) {
@@ -71,6 +76,8 @@ export default function Personal({ dataPersonal }) {
             const feedBackDelete = await deleteData.json();
             console.log(feedBackDelete);
             setStatus('deleted')
+
+            location.reload();
         }
     }
 
@@ -102,7 +109,7 @@ export default function Personal({ dataPersonal }) {
             {(status === 'updated') && alert('Data Berhasil di update')}
             {(status === 'delete') && alert('Data Berhasil di delete')}
             
-            <NavDashboard />
+            <NavDashboard personal='active' />
 
             <div className="content-input">
                 <form onSubmit={
@@ -122,7 +129,7 @@ export default function Personal({ dataPersonal }) {
                     <label form="descShort">Short Description</label>
                     <input onChange={fieldsHandler.bind(this)} type="text" 
                         name="desc_short" placeholder="short description" 
-                        autoComplete="off"  
+                        autoComplete="off"
                         value={fields.desc_short}/>
                     
                     <span style={{display: 'flex', justifyContent: 'space-between'}}>
