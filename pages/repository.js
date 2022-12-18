@@ -38,7 +38,7 @@ function Repository({dataRepo}) {
         let elementTitleRepoContent = titleRepoRef.current;
         if (elementContent === null) return;
         const slide = () => {
-            elementContent.style.transform = `translateX(${-window.pageYOffset}px)`;
+            elementContent.style.transform = `translateX(${-window.pageYOffset * 1.8}px)`;
             elementRopesContent.style.transform = `translateX(${-window.pageYOffset}px)`;
             elementbgRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
             elementbgStarRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
