@@ -116,7 +116,10 @@ function Repository({dataRepo}) {
     );
 }
 
-Repository.getInitialProps = async () => {
+export async function getServerSideProps(context) {
+    const { query } = context;
+    console.log(query);
+    
     const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
     const dataRepo = await dataReq.json(); 
     
@@ -124,5 +127,14 @@ Repository.getInitialProps = async () => {
         dataRepo
     }   
 }
+
+// Repository.getInitialProps = async () => {
+//     const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
+//     const dataRepo = await dataReq.json(); 
+    
+//     return {
+//         dataRepo
+//     }   
+// }
 
 export default Repository;
