@@ -46,14 +46,14 @@ function Repository({dataRepo}) {
             elementbgStarRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
             elementTitleRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
         };
-        console.log(router.query);
+        
         window.addEventListener("scroll", slide);
 
         return () => {
             window.removeEventListener("scroll", slide);
         };
     }, []);
-
+    console.log(router.query);
     return (
         <>
             <Header />
