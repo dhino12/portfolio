@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { BsGithub } from "react-icons/bs";
 import Header from "../components/header";
 import Sosmed from "../components/Sosmed";
+import { useRouter } from "next/router";
 import {
     sliderContentVariants,
     opacityVariants,
@@ -29,6 +30,7 @@ function Repository({dataRepo}) {
     const bgRepoRef = useRef(null);
     const starRepoRef = useRef(null);
     const titleRepoRef = useRef(null); 
+    const router = useRouter();
     
     useEffect(() => {
         let elementContent = contentRef.current;
@@ -44,7 +46,7 @@ function Repository({dataRepo}) {
             elementbgStarRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
             elementTitleRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
         };
-
+        console.log(router.query);
         window.addEventListener("scroll", slide);
 
         return () => {
