@@ -53,7 +53,7 @@ function Repository({dataRepo}) {
                 {/* <div
                     className="bg-repo"
                 />  */}
-                <div className="nav">
+                <div className="nav responsive">
                     <Sosmed />
                 </div>
 

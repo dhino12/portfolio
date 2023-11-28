@@ -129,7 +129,7 @@ export default function About() {
                 exit="exit"
                 id="content"
             >
-                <div className="nav">
+                <div className="nav responsive">
                     <Sosmed />
                 </div>
 

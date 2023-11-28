@@ -45,7 +45,7 @@ export default function Certificate() {
                 animate="visible"
                 exit="exit"
             >
-                <div className="nav">
+                <div className="nav responsive">
                     <Sosmed />
                 </div>
 

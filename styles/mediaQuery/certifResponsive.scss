@@ -16,6 +16,18 @@
     .sayHello {
         display: none !important;
     }
+    .responsive {
+        .sosmed {
+            bottom: unset !important;
+            top: 0;
+            right: 7vh;
+            left: unset !important;
+            flex-direction: row !important;
+            gap: 2vh;
+            margin-top: 40px;
+            z-index: 2;
+        }
+    }
     .container-certif {
         .content-certif {
             width: 100%;

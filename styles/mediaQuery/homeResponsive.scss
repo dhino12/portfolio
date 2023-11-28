@@ -142,14 +142,17 @@
                 right: 25%;
             } 
 
-            .sosmed {
-                svg {
-                    width: 5vw;  
-                }
-                span { 
-                    
-                }
-            }
+            // .sosmed {
+            //     top: unset;
+            //     bottom: 0 !important;
+            //     left: 7vh !important;
+            //     right: unset !important;
+            //     gap: 2vh !important;
+            //     grid-gap: unset !important;
+            //     margin-top: unset !important;
+            //     flex-direction: column !important;
+            //     z-index: 1;
+            // }
         }
     }
 }

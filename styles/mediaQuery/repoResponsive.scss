@@ -1,7 +1,37 @@
 @media only screen and(max-width: 861px) {
     .repo-responsive {
         // height: 320vh;
-
+        .repo__container {
+            .repo__header {
+                width: unset;
+                text-align: left;
+    
+                .fc-outro-header {
+                    width: 84vw;
+    
+                    h1 {
+                        font-size: 12vw;
+                    }
+                }
+                .fc-action-button .fc-btn_store-ico {
+                    width: 159px;
+                    height: 50px;
+                    min-width: unset;
+                    margin: 15px 5px;
+    
+                    .fc-btn_store-text {
+                        span {
+                            font-size: small;
+                        }
+                    }
+                }
+            }
+            .repo__content{
+                .repo_container_main {
+                    grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+                }
+            }
+        }
         .ropes {
             top: 23vw;
         }
