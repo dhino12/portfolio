@@ -1,16 +1,16 @@
 module.exports = {
   reactStrictMode: true, 
   images: {
-    loader: 'akamai',
-    path: '',
+    unoptimized: true,
     domains: [
         'gjamaowmsyukioirshbv.supabase.co',
+        "localhost",
         "https://dhino12.netlify.app/"
     ],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'dhino12.netlify.app',
+        hostname: 'assets.example.com',
         port: '',
         pathname: '/account123/**',
       },
