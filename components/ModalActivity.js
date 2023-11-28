@@ -1,11 +1,16 @@
-import useInput from "../pages/hooks/useInput";
+import useInput from "../hooks/useInput";
 import Modal from "./Modal";
 
 export default function ModalActivity({
-    setOpenModal, addActivity, editActivity, activity
+    setOpenModal,
+    addActivity,
+    editActivity,
+    activity,
 }) {
     const [title, handleTitleChange] = useInput(activity.title);
-    const [description, handleDescriptionChange] = useInput(activity.description);
+    const [description, handleDescriptionChange] = useInput(
+        activity.description
+    );
     const [techName, handleTechNameChange] = useInput(activity.tech_name);
     const [link, handleLinkChange] = useInput(activity.link);
     const [image, handleImageChange] = useInput(activity.image);
@@ -13,21 +18,33 @@ export default function ModalActivity({
     function submitThread() {
         console.log(Object.keys(activity).length);
         if (Object.keys(activity).length == 0) {
-            addActivity({title, tech_name: techName, link, description, image});
+            addActivity({
+                title,
+                tech_name: techName,
+                link,
+                description,
+                image,
+            });
         } else {
-            editActivity({id: activity.id, title, tech_name: techName, link, description, image})
+            editActivity({
+                id: activity.id,
+                title,
+                tech_name: techName,
+                link,
+                description,
+                image,
+            });
         }
     }
 
     return (
         <>
-            <Modal
-                setOpenModal={setOpenModal}
-                submitThread={submitThread}
-            >
+            <Modal setOpenModal={setOpenModal} submitThread={submitThread}>
                 <div className="title">
                     <h1>Bagaimana Aktifitas Belajar Kamu</h1>
-                    <p>Silahkan isi aktifitas kamu agar orang lain juga tahu ?</p>
+                    <p>
+                        Silahkan isi aktifitas kamu agar orang lain juga tahu ?
+                    </p>
                     <textarea
                         cols="50"
                         rows="2"
@@ -81,6 +98,5 @@ export default function ModalActivity({
                 </div>
             </Modal>
         </>
-    )
-    
+    );
 }

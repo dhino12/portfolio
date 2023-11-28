@@ -1,31 +1,48 @@
 import { useState } from "react";
-import useInput from "../pages/hooks/useInput";
+import useInput from "../hooks/useInput";
 import Modal from "./Modal";
 import Image from "next/image";
 
 export default function ModalPortfolio({
-    setOpenModal, addPortfolio, editPortfolio, portfolio
+    setOpenModal,
+    addPortfolio,
+    editPortfolio,
+    portfolio,
 }) {
     const [title, handleTitleChange] = useInput(`${portfolio?.title ?? ""}`);
-    const [description, handleDescriptionChange] = useInput(`${portfolio?.short_description ?? ""}`);
-    const [techName, handleTechNameChange] = useInput(`${portfolio?.tech_name ?? ""}`);
+    const [description, handleDescriptionChange] = useInput(
+        `${portfolio?.short_description ?? ""}`
+    );
+    const [techName, handleTechNameChange] = useInput(
+        `${portfolio?.tech_name ?? ""}`
+    );
     const [link, handleLinkChange] = useInput(`${portfolio?.link ?? ""}`);
     const [image, setImage] = useState(`${portfolio?.image_path ?? ""}`);
 
     function submitThread() {
         if (Object.keys(portfolio).length == 0) {
-            addPortfolio({title, tech_name: techName, link, description, image});
+            addPortfolio({
+                title,
+                tech_name: techName,
+                link,
+                description,
+                image,
+            });
         } else {
-            editPortfolio({id: portfolio.id, title, tech_name: techName, link, description, image})
+            editPortfolio({
+                id: portfolio.id,
+                title,
+                tech_name: techName,
+                link,
+                description,
+                image,
+            });
         }
     }
-    
+
     return (
         <>
-            <Modal
-                setOpenModal={setOpenModal}
-                submitThread={submitThread}
-            >
+            <Modal setOpenModal={setOpenModal} submitThread={submitThread}>
                 <h1>Tambah Portfolio</h1>
                 <p>Silahkan isi portfolio kamu ?</p>
                 <div className="row">
@@ -66,15 +83,17 @@ export default function ModalPortfolio({
                         <span className="image-content">
                             {image.files && (
                                 <img
-                                    src={URL.createObjectURL(image.files)} 
+                                    src={URL.createObjectURL(image.files)}
                                     width={100}
                                     height={100}
                                     alt="image"
                                 />
                             )}
                             {!image.files && (
-                                <Image 
-                                    src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/${image == "" ? 'empty.png' : image}`} 
+                                <Image
+                                    src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/${
+                                        image == "" ? "empty.png" : image
+                                    }`}
                                     width={100}
                                     height={100}
                                     alt="image"
@@ -82,7 +101,11 @@ export default function ModalPortfolio({
                             )}
                             <div>
                                 <label for="upload-photo">Browse...</label>
-                                <p>{image.name?.match(/([^\\]+)(?=\.\w+$)/)[0] ?? ""}</p>
+                                <p>
+                                    {image.name?.match(
+                                        /([^\\]+)(?=\.\w+$)/
+                                    )[0] ?? ""}
+                                </p>
                             </div>
                             <input
                                 id="upload-photo"
@@ -90,7 +113,12 @@ export default function ModalPortfolio({
                                 placeholder="Isikan link image"
                                 accept="image/*"
                                 value={image.name}
-                                onChange={(e) => setImage({files: e.target.files[0], name: e.target.value})}
+                                onChange={(e) =>
+                                    setImage({
+                                        files: e.target.files[0],
+                                        name: e.target.value,
+                                    })
+                                }
                             />
                         </span>
                     </div>
@@ -110,6 +138,5 @@ export default function ModalPortfolio({
                 </div>
             </Modal>
         </>
-    )
-    
+    );
 }
