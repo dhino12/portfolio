@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+https://bluearchive.nexon.com/home#a [for repository]
+https://nikke-en.com/
+https://codedesign.dev/
+https://www.youtube.com/watch?v=7HPsdVQhpRw [slider]
+https://docs.netlify.com/configure-builds/environment-variables/
+https://demos.creative-tim.com/argon-dashboard/pages/profile.html
+https://demos.creative-tim.com/notus-nextjs/admin/settings
+https://www.tailwindawesome.com/resources/stablo/demo
+
+https://www.youtube.com/watch?v=HvOvdD2nX1k
+
 ## Getting Started
 
 First, run the development server:
