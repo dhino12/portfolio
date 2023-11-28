@@ -7,7 +7,7 @@ import Header from "../components/header";
 import NavHover from "../components/NavHover";
 import NavClicked from "../components/NavClicked";
 import animationData from "../public/asset/animation/data2.json";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
     bgBlueVariants,
     bottomVariants,
@@ -26,29 +26,27 @@ import {
     rightHoverVariants,
 } from "../variants/hoverVariants";
 import { bottomLeftClicked, bottomRightClicked, leftClicked, rightClicked } from "../variants/clickVariants";
+import mouseTracker from "../utils/mouseTracker";
 
 export default function Home() {
     const [navHover, setNavHover] = useState({});
     const [navClicked, setnavClicked] = useState({});
-
+    const container = useRef(null);
+    const content = useRef(null);
+    
     useEffect(() => {
-        setTimeout(() => {
-            const contentSelector = document.querySelector(".content");
-            if (contentSelector) {
-                contentSelector.setAttribute(
-                    "style",
-                    "transition: 1s ease-out;"
-                );
-            } 
-        }, 3500);
-    });
+        window.document.body.style.backgroundColor = "#FFFCDC"
+    }, [])
 
     return (
         <> 
             <Header />
+            
             <motion.div
                 className="container"
                 variants={containerVariants}
+                ref={container}
+                onMouseMove={mouseTracker.bind(this, container, content)}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
@@ -127,6 +125,7 @@ export default function Home() {
                     variants={contentVariants}
                     initial="hidden"
                     animate="visible"
+                    ref={content}
                 >
                     <div className="left-content">
                         <motion.div

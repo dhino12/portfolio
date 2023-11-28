@@ -8,19 +8,31 @@ import {
     cardVariants,
     containerVariants, contentVariants,
 } from "../variants/certifVariants";
+import supabase from "../libs/supabaseClient";
+import ModalPdf from "../components/ModalPdf";
  
 export default function Certificate() {
+    const [fields, setFields] = useState([]);
+    const [dataCertifPdf, setDataCertifPdf] = useState("");
+    const [isOpenModal, setOpenModal] = useState(false);
 
-    const [dataCertif, setDataCertif] = useState({});
+    useEffect(() => {
+        window.document.body.style.backgroundColor = "white"
+
+        const fetchUser = async () => {
+            const { data, error } = await supabase
+                .from("certificate")
+                .select()
+
+            if (data) {
+                setFields(data)
+            }
+        }
+        fetchUser()
+    }, []);
 
     return (
-        <>   
-            <motion.div 
-                className="bg-darkYellow"
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                exit={{opacity: 0}} />
-            
+        <>    
             <motion.div 
                 className="pattern-line"
                 initial={{opacity: 0}}
@@ -35,8 +47,6 @@ export default function Certificate() {
                 animate="visible"
                 exit="exit"
             >
-                <ModalCertif dataCertif={dataCertif} setData={setDataCertif}/>
-
                 <div className="nav">
                     <Sosmed />
                 </div>
@@ -45,26 +55,36 @@ export default function Certificate() {
                     <h2 className="vertical-right">CERTIFICATE</h2>
                 </div>
 
+                {
+                    isOpenModal && (
+                        <ModalPdf
+                            setOpenModal={setOpenModal}
+                            pdf={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/pdf/certificate/${dataCertifPdf ?? ""}`}
+                        />
+                    )
+                }
+                
                 <motion.div 
                     className="content-certif"
                     variants={contentVariants}
                     initial='hidden'
                     animate='visible'>
-                    {certif.map((data, index) => (
-                        <motion.div 
-                            className="card" 
-                            variants={cardVariants} 
-                            key={index}
-                            onClick={setDataCertif.bind(this, data)}
-                            >
-                            <div className="img-certif" style={{backgroundImage: `url('${data.foto[0]}')`}} />
-                            <h2>{data.name}</h2>
-                            <div className="tag">
-                                {data.tag.map((tag, index) => <p key={index}>{tag}</p>)}
+                    {
+                        fields.map((field) => (
+                            <div className="content-certif-card" key={field.id} onClick={() => {
+                                setOpenModal(true)
+                                setDataCertifPdf(field.pdf_path)
+                            }}>
+                                <div className="content-certif-card-header">
+                                    <h2>{field.title}</h2>
+                                    <p>#{field.tech_name.replace(" ", "").replace(",", " #")}</p>
+                                </div>
+                                <div className="content-certif-card-img">
+                                    <img src= {`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${field.image_path}`} />
+                                </div>
                             </div>
-                            <p>{data.date}</p>
-                        </motion.div>
-                    ))}
+                        ))
+                    }
                 </motion.div>
             </motion.div>
         </>

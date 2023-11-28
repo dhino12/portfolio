@@ -1,56 +1,49 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { BsGithub } from "react-icons/bs";
+import { IoLogoChrome, IoMdTrophy } from 'react-icons/io'
+import { useEffect, useRef, useState } from "react";
 import Header from "../components/header";
+import RepoContent from "../components/repoContent";
 import Sosmed from "../components/Sosmed";
+import { onShowSlideChange } from "../utils/utils";
 import {
-    sliderContentVariants,
     opacityVariants,
     opFullVariants,
-    cardRepoVariants,
 } from "../variants/certifVariants";
 import { containerVariants } from "../variants/homeVariants";
-
-// export async function getInitialProps() {
-//     const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
-//     const dataRepo = await dataReq.json(); 
-    
-//     return {
-//         props: {
-//             dataRepo
-//         }
-//     }
-// }
+import { SiAndroid, SiServerless } from "react-icons/si";
+import { FaAndroid } from "react-icons/fa";
+import { IoLogoWebComponent } from "react-icons/io5";
+import supabase from "../libs/supabaseClient";
+import CardPortfolio from "../components/CardPortfolio";
 
 function Repository({dataRepo}) {
     const contentRef = useRef(null);
-    const ropesRef = useRef(null);
-    const bgRepoRef = useRef(null);
-    const starRepoRef = useRef(null);
-    const titleRepoRef = useRef(null); 
+    const [slideIndexTab, setSlideIndexTab] = useState({
+        active: 1, topic: 'front-end-web'
+    })
+    const [fields, setFields] = useState([]);
     
     useEffect(() => {
-        let elementContent = contentRef.current;
-        let elementRopesContent = ropesRef.current;
-        let elementbgRepoContent = bgRepoRef.current;
-        let elementbgStarRepoContent = starRepoRef.current;
-        let elementTitleRepoContent = titleRepoRef.current;
-        if (elementContent === null) return;
-        const slide = () => {
-            elementContent.style.transform = `translateX(${-window.pageYOffset * 1.8}px)`;
-            elementRopesContent.style.transform = `translateX(${-window.pageYOffset}px)`;
-            elementbgRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
-            elementbgStarRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
-            elementTitleRepoContent.style.transform = `translateX(${-window.pageYOffset}px)`;
-        };
+        // onShowSlideChange(contentRef, "#item-tab", slideIndexTab.active)
+        const fetchUser = async () => {
+            const { data, error } = await supabase
+                .from("portfolio")
+                .select() 
 
-        window.addEventListener("scroll", slide);
-
-        return () => {
-            window.removeEventListener("scroll", slide);
+            if (data) {
+                setFields(data);
+            }
         };
-    }, []);
+        fetchUser();
+    }, [slideIndexTab]);
+
+    // const currentSlide = (n, topic)  => {
+    //     setSlideIndexTab({
+    //         active: n, topic
+    //     })
+    //     setSlideIndexSlider(1)
+    //     onShowSlideChange(contentRef, "#item-tab", slideIndexTab.active)
+    // }
 
     return (
         <>
@@ -59,70 +52,86 @@ function Repository({dataRepo}) {
             <motion.div
                 className="container repo-responsive"
                 variants={containerVariants}
+                ref={contentRef}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 id="content"
             >
-                <div className='title-repo' ref={titleRepoRef}>REPOSITORY</div>
-                <motion.div
+                {/* <div
                     className="bg-repo"
-                    ref={bgRepoRef}
-                    variants={opacityVariants}
-                />
-                <motion.div
-                    className="bg-star-repo"
-                    ref={starRepoRef}
-                    variants={opFullVariants}
-                />
+                />  */}
                 <div className="nav">
                     <Sosmed />
                 </div>
 
-                <div className="ropes" ref={ropesRef} />
-                <motion.div
-                    className="content-slider"
-                    ref={contentRef}
-                    variants={sliderContentVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                >
-                    {
-                        dataRepo.map(data => (
-                            <>
-                                {(data.topics.length !== 0) && (
-                                    <motion.div className="card" variants={cardRepoVariants}>
-                                        <div className="clothspin" />
-                                        <h2>{data.name}</h2>
-                                        <p> {data.description} </p>
-                                        <div className="tag">
-                                            {data.topics.map(tag => <p>#{tag}</p>)}
-                                        </div>
-                                        <div>
-                                            <a href={data.homepage ? data.homepage : ''} target="_blank">
-                                                <button>Visit</button>
-                                            </a>
-                                            <Link href={data.html_url}><BsGithub /></Link>
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </>
-                        ))
-                    }
-                </motion.div>
+                <div className="repo__container">
+                    <div className="repo__header">
+                        <div class="fc-outro-particles">
+                            <div className="fc-outro-particle -t1 -v1"></div>
+                            <div className="fc-outro-particle -t2 -v2"></div>
+                            <div className="fc-outro-particle -t1 -v3"></div>
+                            <div className="fc-outro-particle -t2 -v4"></div>
+                            <div className="fc-outro-particle -t1 -v5"></div>
+                        </div>
+                        <div className="fc-outro-header">
+                            <h1> List <br/>Project App</h1>
+                        </div>
+                        <div className="fc-action-button">
+                            <a href="#" className="fc-btn_store-ico">
+                                <span className="fc-btn_store-icon"><FaAndroid /></span>
+                                <span className="fc-btn_store-text">
+                                    <span>Android App</span>
+                                </span>
+                            </a>
+                            <a href="#" className="fc-btn_store-ico">
+                                <span className="fc-btn_store-icon"><IoLogoWebComponent /></span>
+                                <span className="fc-btn_store-text">
+                                    <span>Web App</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="repo__content">
+                        <div className="repo_content_header">
+                            <h1>All</h1>
+                        </div>
+                        <div className="repo_container_main">
+                            {
+                                fields.map((portfolioData, index) => (
+                                    <CardPortfolio
+                                        image={portfolioData.image_path}
+                                        title={portfolioData.title}
+                                        techName={portfolioData.tech_name}
+                                        link={portfolioData.link}
+                                        key={index}
+                                    >
+                                    </CardPortfolio>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
             </motion.div>
         </>
     );
 }
 
-Repository.getInitialProps = async () => {
-    const dataReq = await fetch('https://api.github.com/users/dhino12/repos?type=owner')
-    const dataRepo = await dataReq.json(); 
-    
+Repository.getInitialProps = async (context) => {
     return {
-        dataRepo
-    }   
+        dataRepo: {
+            data: [{
+                    name: '',
+                    topics: [],
+                    created_at: ''
+                },
+                {
+                    name: '',
+                    topics: [],
+                    created_at: ''
+                }],
+        }
+    }
 }
 
 export default Repository;
