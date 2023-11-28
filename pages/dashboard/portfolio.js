@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image"
 import Dashboard from "../../layouts/Dashboard"
-import bgProfile from "../../public/asset/webp/bg-repo.webp"
+import bgProfile from "../../public/asset/webp/bg-repo.png"
 import CardPortfolio from "../../components/CardPortfolio";
 import { useEffect, useState } from "react";
 import ModalPortfolio from "../../components/ModalPortfolio";

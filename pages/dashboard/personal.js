@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react"
 import { MdDeleteForever } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
-import bgProfile from "../../public/asset/webp/bg-repo.webp"
+import bgProfile from "../../public/asset/webp/bg-repo.png"
 import Dashboard from "../../layouts/Dashboard";
 import supabase from "../../libs/supabaseClient";
 import ModalActivity from "../../components/ModalActivity";

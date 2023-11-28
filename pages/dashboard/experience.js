@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {CardSlider} from "../../components/CardSlider";
 import Dashboard from "../../layouts/Dashboard";
 import supabase from "../../libs/supabaseClient";
-import bgProfile from "../../public/asset/webp/bg-repo.webp"
+import bgProfile from "../../public/asset/webp/bg-repo.png"
 import Image from "next/image";
 import ModalExperience from "../../components/ModalExperience";
 import generateUniqueId from "../../utils/uniqid";
