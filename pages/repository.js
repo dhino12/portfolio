@@ -1,16 +1,8 @@
 import { motion } from "framer-motion";
-import { IoLogoChrome, IoMdTrophy } from 'react-icons/io'
 import { useEffect, useRef, useState } from "react";
 import Header from "../components/header";
-import RepoContent from "../components/repoContent";
 import Sosmed from "../components/Sosmed";
-import { onShowSlideChange } from "../utils/utils";
-import {
-    opacityVariants,
-    opFullVariants,
-} from "../variants/certifVariants";
 import { containerVariants } from "../variants/homeVariants";
-import { SiAndroid, SiServerless } from "react-icons/si";
 import { FaAndroid } from "react-icons/fa";
 import { IoLogoWebComponent } from "react-icons/io5";
 import supabase from "../libs/supabaseClient";

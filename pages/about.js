@@ -7,7 +7,7 @@ import { BsArrowDownCircle, BsArrowUpRightCircle } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import supabase from "../libs/supabaseClient";
 import { dateFormatMontDate } from "../utils/dateFormat";
-import CardSlider, { Slider } from "../components/CardSlider";
+import { Slider } from "../components/CardSlider";
 
 function showFlowerBg(number) {
     if (number == 1) {

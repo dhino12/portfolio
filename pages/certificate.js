@@ -1,9 +1,7 @@
 import { motion } from "framer-motion" 
 import { useEffect, useState } from "react";
 import Header from "../components/header"
-import ModalCertif from "../components/ModalCertif";
 import Sosmed from "../components/Sosmed";
-import certif from "../data/certif";
 import {
     cardVariants,
     containerVariants, contentVariants,
