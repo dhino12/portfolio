@@ -1,0 +1,381 @@
+.about__container {
+    width: 100%;
+    color: white;
+    margin-bottom: 10vh;
+
+    .container {
+        height: auto;
+    }
+
+    .nav {
+        .sosmed {
+            span {
+                background-color: white;
+            }
+        }
+    }
+
+    .about__header {
+        width: 44%;
+        margin: 0 auto;
+        margin-top: 20vh;
+        position: relative;
+        text-align: center;
+        font-family: 'CircularSpotifyText-Medium';
+
+        h1 {
+            font-size: 6em;
+        }
+
+        h3 {
+            line-height: 30px;
+            font-weight: 500;
+            margin-top: 6vh;
+            text-align: justify;
+        }
+
+        .about__contactMe {
+            width: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: transparent;
+            border: 2px solid transparent;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            transition: all .1s;
+            position: relative;
+        }
+
+        .about__contactMe:hover {
+            border: 2px solid #abab;
+            cursor: pointer;
+            font-size: 15px;
+        }
+    }
+
+    .about__myActivity_wrapper {
+        margin-top: 20vh;
+        padding-left: 12vw;
+        padding-right: 6vw;
+        
+        .about__myAchievement {
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .about__myActivity_container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin-top: 5vh;
+
+            .about__myExperience_content_img {
+                height: 80vh;
+                grid-row: span 3;
+                border: 2px solid #ffffff31;
+
+                img {
+                    object-position: top;
+                }
+            }
+
+            .about__myExperience_content {
+                margin-bottom: 40px; 
+                border-radius: 10px; 
+                position: relative;
+                z-index: 1;
+                line-height: 28px;
+                h1, h3 {
+                    transition: all .3s ease;
+                }
+                &:hover h1, &:hover h3 { 
+                    cursor: pointer;
+                    text-shadow: .5px .5px #0aff9d;
+
+                    button {
+                        color: black;
+
+                        svg {
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+                        }
+                    }
+                }  
+                & h1::after{
+                    content: "";
+                    background-color: #0aff9d;
+                    width: 0;
+                    height: 5px;
+                    position: absolute;
+                    z-index: -1;
+                    bottom: 25px;
+                    left: 0; 
+                    transition: width .3s ease;
+                }
+                &:hover h1::after{
+                    content: ""; 
+                    width: 80%; 
+                }
+            }
+            a {
+                transition: all .1s ease;
+
+                .about__myActivity_content {
+                    height: 80vh;
+                    border: 2px solid #ffffff31;
+                    padding: 5vh 6vh;
+                    position: relative;
+                    transition: all .3s ease;
+                    z-index: 1;
+                    overflow: hidden;
+    
+                    h1 {
+                        font-size: 2.5em;
+                        margin-bottom: 2vh;
+                    }
+    
+                    p {
+                        font-family: Tahoma, sans-serif ;
+                        line-height: 25px;
+                        font-size: 17px;
+                    }
+    
+                    button {
+                        width: 10.4vw;
+                        position: absolute;
+                        bottom: 8vh;
+                        background-color: transparent;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        font-family: 'CircularSpotifyText-Medium';
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 14px;
+    
+                        svg {
+                            width: 3vh;
+                            height: auto;
+                            transition: all .2s ease;
+                        }
+                    }
+                    
+                    .bg-flower {
+                        position: absolute;
+                        height: 100%;
+                        top: 0;
+                        right: 0;
+                        z-index: -1; 
+                        opacity: 0;
+                        transition: all .2s ease;
+                        color: #1f2b38;
+                    }
+    
+                    .bg-logo {
+                        position: absolute;
+                        min-height: 10vh;
+                        max-height: 15%;
+                        bottom: 2em;
+                        right: 2em;
+                        z-index: 1; 
+                        opacity: 0;
+                        color: #1f2b38;
+                    }
+                }
+                
+                &:nth-child(1):hover .bg-flower {
+                    opacity: 1;
+                    color: #4c637c;
+                }
+
+                &:nth-child(1):hover .bg-logo {
+                    opacity: 1;
+                }
+                
+                &:nth-child(1):hover { 
+                    background-color: #1f2b38;
+                    color: white;
+                    cursor: pointer;
+
+                    button {
+                        color: white;
+
+                        svg {
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                &:nth-child(2):hover .bg-flower {
+                    opacity: 1;
+                    color: #a4c9d8;
+                }
+                
+                &:nth-child(2):hover .bg-logo {
+                    opacity: 1;
+                    color: #4c637c;
+                }
+                
+                &:nth-child(2):hover { 
+                    background-color: #3e8ef1;
+                    color: black;
+                    cursor: pointer;
+
+                    button {
+                        color: black;
+
+                        svg {
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                &:nth-child(3):hover .bg-flower {
+                    opacity: 1;
+                    color: #fb7ea8;
+                }
+                
+                &:nth-child(3):hover .bg-logo {
+                    opacity: 1;
+                    color: #4c637c;
+                }
+
+                &:nth-child(3):hover { 
+                    background-color: white;
+                    color: black;
+                    cursor: pointer;
+
+                    button {
+                        color: black;
+
+                        svg {
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                
+                &:nth-child(4):hover .bg-flower {
+                    opacity: 1;
+                    color: #fb7ea8;
+                }
+                
+                &:nth-child(4):hover .bg-logo {
+                    opacity: 1;
+                    color: #4c637c;
+                }
+
+                &:nth-child(4):hover { 
+                    background-color: #ffbc4b;
+                    color: black;
+                    cursor: pointer;
+
+                    button {
+                        color: black;
+
+                        svg {
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+
+    .about__emailme { 
+        margin-top: 10vh;
+        padding-left: 12vw;
+        padding-right: 6vw;
+        display: flex;
+        flex-direction: column;
+        
+        .about__emailme_text {
+            width: 100%;
+            h1 {
+                font-size: 4rem;
+                letter-spacing: -.06em;
+                line-height: 1.08;
+            }
+        }
+        .about__emailme_form, p {
+            width: 55%;
+            margin-right: 0;
+            margin-left: auto;
+
+            color: #ffffff60;
+        }
+        .about__emailme_form {
+            margin-right: 0;
+            margin-top: 30vh;
+            margin-left: auto;
+            margin-bottom: 10vh;
+            border-bottom: 1px solid white;
+
+            input { 
+                width: 89%;
+                display: inline-block;
+                background-color: transparent;
+                border: 0;
+                line-height: 3rem;
+                color: white;
+                font-size: 1.5rem;
+                font-family: sans-serif;
+            }
+
+            input:focus{
+                outline: none;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: white;
+                font-weight: 600; 
+                font-size: 1rem;
+                cursor: pointer;
+                padding: 10px;
+            }
+
+            button:hover {
+                border-top: 2px solid white;
+            }
+        }
+    }
+}
+
+.active {
+    cursor: pointer;
+    text-shadow: .5px .5px #0aff9d;
+
+    button {
+        color: black;
+
+        svg {
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+        }
+    }
+
+    & h1::after{
+        content: "";
+        background-color: #0aff9d;
+        height: 5px;
+        position: absolute;
+        z-index: -1;
+        bottom: 25px;
+        left: 0; 
+        transition: width .3s ease;
+    }
+}

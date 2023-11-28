@@ -1,9 +1,5 @@
-body {
-    
-}
-
-.container-certif{  
-    position: relative;
+.container-certif{
+    position: relative; 
 
     .page-name{
         .vertical-right {
@@ -127,64 +123,46 @@ body {
     }
 
     .content-certif{
-        width: 125vh;
-        transform: translate(-50%, 8%);
+        width: 100%;
         position: relative;
-        left: 50%; 
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        padding-left: 8vw;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 18vh;
         margin-bottom: 10vh;
-        justify-content: space-between;
+        
+        .content-certif-card {
+            padding-top: 15px;
+            border: 1px solid black;
+            transition: 
+                scale 350ms ease, 
+                opacity 350ms linear,
+                filter 250ms linear;
 
-        .card {
-            width: 59vh;
-            height: 40vh;
-            background-color: #fffac367;
-            border: 2px solid #A3423C;
-            margin-bottom: 50px;
-            margin-right: 5px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            padding: 20px;
-            justify-content: space-between;
-            transition: 0.5s ease;
-
-            .img-certif {
-                background-size: cover;
-                background-position-y: -50px;
-                width: 100%;
-                height: 60%;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                padding-bottom: 5px;
-                margin-bottom: 10px;
-                border-bottom: 2px solid black;
-            }
-
-            .tag {
-                display: inline-block;
-                
-                p{
-                    padding: 5px;
-                    width: 100%;
-                    display: inline;
-                    margin-right: 1vw; 
+            .content-certif-card-header {
+                margin: 0 20px;
+                h2 {
+                    margin-bottom: 5px;
+                }
+                p {
+                    margin-top: 0;
+                    margin-bottom: 0;
                 }
             }
-        }
 
-        .card:hover {
-            background-color: #ffe597; 
-            box-shadow: 5px 10px #781D42;
-            margin-top: -5px;
-            margin-left: -5px;
-            cursor: pointer;
+            .content-certif-card-img {
+                height: 40vh;
+                margin-top: 20px;
 
-            h2 {
-                // border-bottom: 2px solid white;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
+            &:hover {
+                cursor: pointer;
             }
         }
     }
@@ -219,4 +197,10 @@ body {
             }
         }
     }
+}
+
+.content-certif:has(.content-certif-card:hover) > .content-certif-card:not(:hover) {
+    filter: sepia();
+    opacity: .7;
+    scale: .9;
 }

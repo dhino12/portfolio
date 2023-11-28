@@ -1,91 +1,356 @@
-@media only screen and(min-width: 862px) and (max-width: 1278px) {
-    .container {
-        .content-slider {
-            left: 1vw;
+@media only screen and(min-width: 1000px) and (max-width: 1280px) {
+    .about__container {
+        .container {  
+            .about__header {
+                width: 60%;
 
-            .card { 
-
-                .clothspin {
-                    width: 18vw;
+                h1 {
+                    font-size: 3.8rem;
                 }
+            }
 
-                h2 {
-                    font-size: 2vw;
-                }
+            .about__myActivity_wrapper {
+                padding-left: 14vw;
+                padding-right: 3vw;
 
-                p {
-                    font-size: 1.5vw;
-                }
+                .about__myActivity_container {
+                    grid-gap: 20px;
 
-                button {
-                    width: 12vw;
-                    font-size: 1.5vw;
+                    .about__myActivity_content {
+                        padding: 5vh 3vh;
+                        h1 {
+                            font-size: 2rem;
+                        }
+
+                        p { 
+                            height: 41vh;
+                            font-size: 12px;
+                            overflow: auto;
+                        } 
+                        
+                        button {
+                            width: 70%;  
+                            bottom: 8vh;
+                            background-color: transparent;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            font-family: 'CircularSpotifyText-Medium';
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 14px;
+
+                            svg {
+                                width: 3vh;
+                                height: auto;
+                                transition: all .2s ease;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-@media only screen and(max-width: 861px) {
-    .container { 
-        .windowProgram {
-            padding: 5vw;
+@media only screen and(min-width: 600px) and (max-width: 1000px) {
+    .about__container {
+        .container {  
+            .about__header {
+                width: 60%;
 
-            .programName {
-                font-size: 1.5vw;
-                top: 1.5vw;
-                left: 5vw;
-            }
-
-            .close {
-                top: 1vw;
-                right: 5vw;
-                padding: unset;
-
-                svg {
-                    width: 3vw;
+                h1 {
+                    font-size: 4rem;
                 }
             }
 
-            .contentProgram {
-                padding: 3vw;
-                
-                p {
-                    line-height: 2.5vh;
-                    font-size: 2vw;
+            .about__myActivity_wrapper {
+                padding-left: 14vw;
+                padding-right: 3vw;
+                .about__myActivity_container {
+                    grid-gap: 20px;
+
+                    .about__myActivity_content {
+                        padding: 5vh 3vh;
+                        h1 {
+                            font-size: 1.5rem;
+                        }
+
+                        p { 
+                            height: 41vh;
+                            font-size: 12px;
+                            overflow: auto;
+                        }
+
+                        h3 {
+                            font-size: 14px;
+                        }
+                        
+                        button {
+                            width: 70%;  
+                            bottom: 8vh;
+                            background-color: transparent;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            font-family: 'CircularSpotifyText-Medium';
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 14px;
+
+                            svg {
+                                width: 3vh;
+                                height: auto;
+                                transition: all .2s ease;
+                            }
+                        }    
+
+                        &:nth-child(1):hover .bg-flower, &:nth-child(1):hover .bg-logo {
+                            opacity: 0;
+                        }
+
+                        &:nth-child(1){ 
+                            background-color: #1f2b38;
+                            color: white;
+                            cursor: pointer;
+        
+                            button {
+                                color: white;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) { 
+                            background-color: #3e8ef1;
+                            color: black;
+                            cursor: pointer;
+        
+                            button {
+                                color: black;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                        
+                        &:nth-child(2):hover .bg-flower, &:nth-child(2):hover .bg-logo {
+                            opacity: 0;
+                        }
+
+                        &:nth-child(3) { 
+                            background-color: white;
+                            color: black;
+                            cursor: pointer;
+        
+                            button {
+                                color: black;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                        
+                        &:nth-child(3):hover .bg-flower, &:nth-child(3):hover .bg-logo {
+                            opacity: 0;
+                        }
+
+                        &:nth-child(4) { 
+                            background-color: #ffbc4b;
+                            color: black;
+                            cursor: pointer;
+        
+                            button {
+                                color: black;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        &:nth-child(4):hover .bg-flower, &:nth-child(4):hover .bg-logo {
+                            opacity: 0;
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-@media only screen and(max-width: 562px) {
-    .container { 
-        .windowProgram {
-            padding: 5vw;
+@media only screen and(max-width: 600px) {
+    .about__container {
+        .container {  
+            .about__header {
+                width: 100%;
+                padding-left: 19vw;
+                padding-right: 8vw;
 
-            .programName {
-                font-size: 1.5vw;
-                top: 1.5vw;
-                left: 5vw;
-            }
-
-            .close {
-                top: 1vw;
-                right: 5vw;
-                padding: unset;
-
-                svg {
-                    width: 3vw;
+                h1 {
+                    font-size: 4rem;
                 }
             }
 
-            .contentProgram {
-                padding: 5vw;
+            .about__myActivity_wrapper {
+                padding-left: 19vw;
+                padding-right: 8vw;
+
+                .about__myActivity_container {
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-gap: 20px;
+
+                    .about__myActivity_content {
+                        padding: 5vh 3vh;
+                        h1 {
+                            font-size: 1.8rem;
+                        }
+
+                        p { 
+                            height: 41vh;
+                            font-size: 12px;
+                            overflow: auto;
+                        } 
+                        
+                        button {
+                            width: 70%;  
+                            bottom: 8vh;
+                            background-color: transparent;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            font-family: 'CircularSpotifyText-Medium';
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 14px;
+
+                            svg {
+                                width: 3vh;
+                                height: auto;
+                                transition: all .2s ease;
+                            }
+                        }    
+
+                        &:nth-child(1):hover .bg-flower, &:nth-child(1):hover .bg-logo {
+                            opacity: 0;
+                        }
+
+                        &:nth-child(1){ 
+                            background-color: #1f2b38;
+                            color: white;
+                            cursor: pointer;
+        
+                            button {
+                                color: white;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) { 
+                            background-color: #3e8ef1;
+                            color: black;
+                            cursor: pointer;
+        
+                            button {
+                                color: black;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                        
+                        &:nth-child(2):hover .bg-flower, &:nth-child(2):hover .bg-logo {
+                            opacity: 0;
+                        }
+
+                        &:nth-child(3) { 
+                            background-color: white;
+                            color: black;
+                            cursor: pointer;
+        
+                            button {
+                                color: black;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                        
+                        &:nth-child(3):hover .bg-flower, &:nth-child(3):hover .bg-logo {
+                            opacity: 0;
+                        }
+
+                        &:nth-child(4) { 
+                            background-color: #ffbc4b;
+                            color: black;
+                            cursor: pointer;
+        
+                            button {
+                                color: black;
+        
+                                svg {
+                                    background-color: black;
+                                    color: white;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        &:nth-child(4):hover .bg-flower, &:nth-child(4):hover .bg-logo {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .about__emailme {  
+                padding-left: 19vw;
+                padding-right: 8vw; 
                 
-                p {
-                    line-height: 1.8vh;
-                    font-size: 2.4vw;
+                .about__emailme_text { 
+                    h1 {
+                        font-size: 3.5rem; 
+                    }
+                }
+
+                .about__emailme_form, p {
+                    width: 100%;
+                }
+
+                .about__emailme_form { 
+                    margin-top: 15vh;  
+        
+                    input { 
+                        width: 85%; 
+                        font-size: 1rem; 
+                    }
+         
                 }
             }
         }

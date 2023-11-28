@@ -2,9 +2,8 @@
     .container-certif {
         .content-certif {
             width: 100%; 
-            transform: translate(-50%, 8%);
-            left: 50%;
-            justify-content: center;
+            padding-left: 9vw;
+            grid-template-columns: repeat(3, 1fr);
 
             .card {
                 width: 39vw;
@@ -14,21 +13,28 @@
 }
 
 @media only screen and(max-width: 861px) {
+    .sayHello {
+        display: none !important;
+    }
     .container-certif {
         .content-certif {
             width: 100%;
-            transform: translate(-50%, 8%);
-            left: 75%;
+            padding-left: 12vw;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
 
 @media only screen and(max-width: 562px) {
+    .sayHello {
+        display: none !important;
+    }
     .container-certif {
         .content-certif {
             width: unset;
-            transform: translate(-50%, 8%);
-            left: 77vw;
+            padding-left: 18vw;
+            padding-right: 10vw;
+            grid-template-columns: repeat(1, 1fr);
 
             .card {
                 width: 81vw;

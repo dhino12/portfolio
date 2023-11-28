@@ -1,0 +1,85 @@
+.w-unset {
+    width: unset;
+}
+
+.align-item-center {
+    align-items: center;
+}
+
+.bg-auth {
+    background-color: rgb(30,41,59);
+    background-image: url('https://demos.creative-tim.com/notus-nextjs/img/register_bg_2.png');
+    background-size: cover;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.m-horizontal-10-large {
+    margin: 12px 20vh;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.header-content {
+    color: white;
+    font-size: 10px;
+    font-family: 'inter';
+}
+
+.navigation-header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    gap: 20px;
+    
+    button {
+        width: 10vh;
+        height: 5vh;
+        margin: 0; 
+        position: relative;
+        background-color: aliceblue;
+        left: unset;
+        transform: none;
+        border-radius: 4px;
+    }
+    svg {
+        cursor: pointer;
+
+        &:hover {
+            color: brown;
+        }
+    }
+}
+
+.container-auth {
+    .content-auth {
+        width: 60vh;
+        background-color: aliceblue;
+        margin: 0 auto;
+        padding: 10px 50px;
+        padding-bottom: 30px;
+        border-radius: 10px;
+    }
+}
+
+.auth-footer {
+    background: transparent;
+    color: white;
+}

@@ -17,3 +17,13 @@
     font-family: 'pacifico';
     src: url('/asset/fonts/Pacifico-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'CircularSpotifyText-Bold';
+    src: url('/asset/fonts/CircularSpotifyText-Bold.otf');
+}
+
+@font-face {
+    font-family: 'CircularSpotifyText-Medium';
+    src: url('/asset/fonts/CircularSpotifyText-Medium.otf');
+}

@@ -1,0 +1,240 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(50, 50, 50, 0.651);
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalWrapper {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      justify-content: center;
+      align-items: center;
+      animation: showModal .2s;
+  }
+  
+  .modalContainer { 
+    width: 90vh;
+    height: 550px;
+    border-radius: 12px;
+    background-color: hsla(0, 0%, 100%, .8);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    backdrop-filter: saturate(200%) blur(30px);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 11px 24px;
+    z-index: 3;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .modalContainer p:not(:first-child) {
+    text-align: center;
+  }
+  .modalContainer h1 {
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .modalContainer .title, .modalContainer .category, .image, .pdf {
+    width: 100%;
+    position: relative;
+    display: inline-block; 
+  }
+
+  .title h1 {
+    width: 70vh;
+    text-align: center;
+  }
+  
+  /* .modalContainer .image span {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    align-items: center;
+  } */
+
+  .modalContainer .image span {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .modalContainer .image img {
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+  }
+
+  .modalContainer .pdf .pdf-content {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+    gap: 10%;
+    margin-bottom: 20px;
+  }
+  .modalContainer .pdf .pdf-content p {
+    margin: 0;
+  }
+  .modalContainer .image .image-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+  .modalContainer .image div p, .modalContainer .pdf div p {
+    width: 88%;
+    margin-left: 10px;
+    display: -webkit-box;
+    line-clamp: 3; 
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    text-align: justify;
+  }
+  .modalContainer .image label, .modalContainer .pdf label {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: -1px 1px black;
+    display: block;
+  }
+  .modalContainer .image label:hover {
+    box-shadow: -2px 2px black;
+    transform: translate(1px, -1px);
+  }
+  .modalContainer .image label:active {
+    box-shadow: 0px 0px black;
+    transform: translate(-1px, 1px);
+  }
+  .modalContainer .image input, .modalContainer .pdf input {
+    display: none;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .titleCloseBtn button:hover {
+    background-color: crimson;
+    color: white;
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;  
+    flex-direction: column;
+  }
+  
+  .modalContainer .body p {
+    margin: 0;
+  }
+
+  .modalContainer p {
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .modalContainer input {
+    width: 100%;
+    height: 5vh;
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin: 10px 0;
+    border: 1px solid gray;
+  }
+  
+  .modalContainer textarea {
+    width: 100%;
+    border-radius: 6px; 
+    font-family: monospace;
+    padding: 3px 10px;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer; 
+    box-shadow: -1px 1px 2px rgba(51,65,85,1);
+  }
+  
+  .modalContainer .footer button:hover {
+    background-color: rgb(51,65,85);
+    color: white;
+    font-weight: bold;
+  }
+  
+  #cancelBtn:hover {
+    background-color: crimson;
+  }
+  
+  .warning-notlogged {
+    height: auto;
+  }
+  
+  .warning-notlogged sub {
+    font-size: 12px;
+  }
+  .flex-start {
+    justify-content: start !important;
+  }
+  .ms-8-large {
+    margin-left: 8vh;
+  }
+  .p-bottom-10 {
+    padding-bottom: 10px;
+  }
+  @keyframes showModal {
+    0% {
+      /* transform: translateY(-75vh); */
+      opacity: 0;
+    }
+    50% {
+      opacity: .7;
+    }
+    100% {
+      opacity: 1;
+      /* transform: translateY(0); */
+    }
+  }

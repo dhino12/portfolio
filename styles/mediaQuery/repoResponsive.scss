@@ -1,15 +1,16 @@
-@media only screen and(min-width: 862px) {
-    .repo-responsive {
-        height: 224vh;
-    }
-}
-
 @media only screen and(max-width: 861px) {
     .repo-responsive {
-        height: 320vh;
+        // height: 320vh;
 
         .ropes {
             top: 23vw;
+        }
+        .repo__content {
+            .repo__content_image {
+                img {
+                    width: 100%;
+                }
+            }
         }
         .content-slider {
             left: 1vw;
@@ -51,7 +52,7 @@
 
 @media only screen and(max-width: 562px) {
     .repo-responsive {
-        height: 355vh;
+        // height: 355vh;
 
         .ropes {
             top: 38vw;
