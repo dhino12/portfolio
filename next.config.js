@@ -1,9 +1,11 @@
 module.exports = {
   reactStrictMode: true, 
   images: {
+    unoptimized: true,
     domains: [
         'gjamaowmsyukioirshbv.supabase.co',
-        "localhost"
+        "localhost",
+        "https://dhino12.netlify.app/"
     ],
     remotePatterns: [
       {
