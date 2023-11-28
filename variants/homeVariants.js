@@ -55,10 +55,10 @@ const contentVariants = {
     },
     visible: {
         opacity: 1,
-        height: 514,
+        height: 454,
         transition: {
             type: "spring",
-            mass: 0.9,
+            mass: 1.9,
             damping: 10,
             when: "beforeChildren",
             staggerChildren: 0.5,

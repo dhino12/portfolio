@@ -50,7 +50,7 @@ const opacityVariants = {
         opacity: 0
     },
     visible: {
-        opacity: 0.3
+        opacity: 0.9
     }
 }
 const opFullVariants = {
