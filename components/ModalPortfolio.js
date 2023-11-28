@@ -3,22 +3,20 @@ import useInput from "../pages/hooks/useInput";
 import Modal from "./Modal";
 import Image from "next/image";
 
-export default function ModalCertificate({
+export default function ModalPortfolio({
     setOpenModal, addPortfolio, editPortfolio, portfolio
 }) {
     const [title, handleTitleChange] = useInput(`${portfolio?.title ?? ""}`);
     const [description, handleDescriptionChange] = useInput(`${portfolio?.short_description ?? ""}`);
-    const [idCertif, handleIdCertifChange] = useInput(`${portfolio?.id_certif ?? ""}`);
+    const [techName, handleTechNameChange] = useInput(`${portfolio?.tech_name ?? ""}`);
     const [link, handleLinkChange] = useInput(`${portfolio?.link ?? ""}`);
-    const [techName, handleTechName] = useInput(`${portfolio?.tech_name ?? ""}`);
     const [image, setImage] = useState(`${portfolio?.image_path ?? ""}`);
-    const [pdf, setPdf] = useState(`${portfolio?.pdf_path ?? ""}`);
 
     function submitThread() {
         if (Object.keys(portfolio).length == 0) {
-            addPortfolio({title, idCertif, link, description, techName,image, pdf});
+            addPortfolio({title, tech_name: techName, link, description, image});
         } else {
-            editPortfolio({id: portfolio.id, title, idCertif, link, description, techName, image, pdf})
+            editPortfolio({id: portfolio.id, title, tech_name: techName, link, description, image})
         }
     }
     
@@ -28,35 +26,39 @@ export default function ModalCertificate({
                 setOpenModal={setOpenModal}
                 submitThread={submitThread}
             >
-                <h1>Tambah Certificate</h1>
+                <h1>Tambah Portfolio</h1>
+                <p>Silahkan isi portfolio kamu ?</p>
                 <div className="row">
                     <div className="title">
                         <p>Title / Project Name</p>
-                        <input
-                            type="text"
+                        <textarea
+                            cols="50"
+                            rows="2"
                             placeholder="Isikan title"
                             value={title}
                             onChange={handleTitleChange}
                         />
-                    </div> 
+                    </div>
                     <div className="category">
-                        <p>Technology Name</p>
-                        <input
-                            type="text"
-                            placeholder="tech_name"
+                        <p>Tech Name</p>
+                        <textarea
+                            cols="50"
+                            rows="2"
+                            placeholder="lebih dari 1 ? pisahkan dengan koma (,)"
                             value={techName}
-                            onChange={handleTechName}
+                            onChange={handleTechNameChange}
                         />
                     </div>
                 </div>
-                <div className="row"> 
+                <div className="row">
                     <div className="category">
-                        <p>Credential ID</p>
-                        <input
-                            type="text"
-                            placeholder="credential id jika ada"
-                            value={idCertif}
-                            onChange={handleIdCertifChange}
+                        <p>Link Penyelenggara</p>
+                        <textarea
+                            cols="50"
+                            rows="2"
+                            placeholder="Isikan link penyelenggara program"
+                            value={link}
+                            onChange={handleLinkChange}
                         />
                     </div>
                     <div className="image">
@@ -72,7 +74,7 @@ export default function ModalCertificate({
                             )}
                             {!image.files && (
                                 <Image 
-                                    src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${image == "" ? 'empty.png' : image}`} 
+                                    src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/${image == "" ? 'empty.png' : image}`} 
                                     width={100}
                                     height={100}
                                     alt="image"
@@ -93,40 +95,14 @@ export default function ModalCertificate({
                         </span>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="category">
-                        <p>Link Penyelenggara</p>
-                        <input
-                            type="text"
-                            placeholder="Isikan link penyelenggara program"
-                            value={link}
-                            onChange={handleLinkChange}
-                        />
-                    </div>
-                    <div className="pdf">
-                        <p>PDF</p>
-                        <span className="pdf-content">
-                            <span style={{width: '19vh', overflow: 'hidden'}}>
-                                <p>{pdf.name?.match(/([^\\]+)(?=\.\w+$)/)[0] ?? pdf}.pdf</p>
-                            </span>
-                            <div>
-                                <label for="upload-pdf">Browse...</label>
-                            </div>
-                            <input
-                                id="upload-pdf"
-                                type="file"
-                                placeholder="isikan pdf"
-                                accept="application/pdf"
-                                onChange={(e) => setPdf({files: e.target.files[0], name: e.target.value})}
-                            />
-                        </span>
-                    </div>
-                </div>
                 <div className="body">
                     <p>Description</p>
+                    <p>
+                        <strong>{description.length}</strong>/320
+                    </p>
                     <textarea
                         cols="60"
-                        rows="4"
+                        rows="8"
                         placeholder="apa yang kamu pikirkan ?"
                         value={description}
                         onChange={handleDescriptionChange}

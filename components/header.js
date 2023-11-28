@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 export default function Header() {
@@ -5,7 +6,6 @@ export default function Header() {
         <header>
             <Link href="/"><a><h1 className="logo">.D.</h1></a></Link>
             <h2 className="sayHello">Say Hi....</h2>
-
         </header>
     )
 }
