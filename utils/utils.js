@@ -20,4 +20,13 @@ function onShowSlideChange(contentRef, queryItems, slideIndexSlider) {
     dots[slideIndexSlider - 1].className += " repo__tabActive";
 }
 
-export { formatBytes, onShowSlideChange }
+function toBoolean(data) {
+    console.log(data);
+    if (`${data}`.toLowerCase() == "false") {
+        return false
+    } else {
+        return true
+    }
+}
+
+export { formatBytes, onShowSlideChange, toBoolean }

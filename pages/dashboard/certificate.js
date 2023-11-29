@@ -68,7 +68,7 @@ export default function Certificate() {
                 link,
                 image_path: imageData.path,
                 pdf_path: pdfData.path,
-                id_certif: idCertif,
+                credential_id: idCertif,
                 tech_name: techName
             })
             .select()
@@ -142,7 +142,7 @@ export default function Certificate() {
             .from("certificate")
             .update({
                 title,
-                id_certif: idCertif,
+                credential_id: idCertif,
                 short_description: description,
                 link,
                 image_path: imageDataLet?.path ?? image,
@@ -262,7 +262,7 @@ export default function Certificate() {
                                 <CardPortfolio
                                         image={`certificate/${portfolioData.image_path}`}
                                         title={portfolioData.title}
-                                        techName={`Credential ID: ${portfolioData.id_certif}`}
+                                        techName={`Credential ID: ${portfolioData.credential_id}`}
                                         link={portfolioData.link}
                                         key={index}
                                     >
@@ -270,7 +270,7 @@ export default function Certificate() {
                                         setOpenModal(true)
                                         setEditActivity(portfolioData)
                                     }}>Edit</button>
-                                    <button className={portfolioData.is_favorite && "favorited"} onClick={() => {
+                                    <button className={`${portfolioData.is_favorite && "favorited"}`} onClick={() => {
                                         favoriteHandler(portfolioData.id, portfolioData.is_favorite)
                                     }}>Favorite</button>
                                     <button onClick={() => {
