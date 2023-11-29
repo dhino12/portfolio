@@ -2,6 +2,8 @@ module.exports = {
   reactStrictMode: true, 
   images: {
     unoptimized: true,
+    loader: 'akamai',
+    path: '',
     domains: [
         'gjamaowmsyukioirshbv.supabase.co',
         "localhost",
