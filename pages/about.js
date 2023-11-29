@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import supabase from "../libs/supabaseClient";
 import { dateFormatMontDate } from "../utils/dateFormat";
 import { Slider } from "../components/CardSlider";
+import Link from "next/link";
 
 function showFlowerBg(number) {
     if (number == 1) {
@@ -188,17 +189,19 @@ export default function About() {
                         </div>
                     </div>
                     <div className="about__myActivity_wrapper">
-                        <div className="about__myAchievement">
-                            <Reveal margin="0 auto">
-                                <h1>
-                                    🏆 <br />
-                                    Compose Migration Champion Challenge 2023
-                                </h1>
-                            </Reveal>
-                            <Reveal margin="0 auto">
-                                <h3>Google x Dicoding Indonesia </h3>
-                            </Reveal>
-                        </div>
+                        <Link href="https://www.dicoding.com/blog/selamat-kepada-pemenang-compose-migration-champion-challenge-2023/" target="_blank" rel="noopener noreferrer">
+                            <div className="about__myAchievement">
+                                <Reveal margin="0 auto">
+                                    <h1>
+                                        🏆 <br />
+                                        Compose Migration Champion Challenge 2023
+                                    </h1>
+                                </Reveal>
+                                <Reveal margin="0 auto">
+                                    <h3>Google x Dicoding Indonesia </h3>
+                                </Reveal>
+                            </div>
+                        </Link>
                     </div>
                     <div className="about__myActivity_wrapper">
                         <h1>My Intern Experience</h1>

@@ -165,6 +165,29 @@ export default function Certificate() {
             })
         }
     }
+
+    async function favoriteHandler(id, isFavorite) {
+        const { data, error } = await supabase
+            .from("certificate")
+            .update({
+                is_favorite: !isFavorite
+            })
+            .eq("id", id)
+            .select()
+
+        if (error) {
+            console.error(error);
+            alert("Favorite Failed")
+            return
+        }
+        if (data) {
+            alert("Success")
+            setOpenModal(false)
+            setFields((prevState) => {
+                return prevState.map(activityData => activityData.id == id ? data[0] : activityData)
+            })
+        }
+    }
     
     async function deleteData(id) {
         if (!confirm('Yakin hapus data ?, hapus data ini akan termasuk menghapus aktifitas anda')) {
@@ -247,6 +270,9 @@ export default function Certificate() {
                                         setOpenModal(true)
                                         setEditActivity(portfolioData)
                                     }}>Edit</button>
+                                    <button className={portfolioData.is_favorite && "favorited"} onClick={() => {
+                                        favoriteHandler(portfolioData.id, portfolioData.is_favorite)
+                                    }}>Favorite</button>
                                     <button onClick={() => {
                                         deleteData(portfolioData.id)
                                     }}>Delete</button>

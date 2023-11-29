@@ -8,6 +8,7 @@ import {
 } from "../variants/certifVariants";
 import supabase from "../libs/supabaseClient";
 import ModalPdf from "../components/ModalPdf";
+import { FaStar } from "react-icons/fa";
  
 export default function Certificate() {
     const [fields, setFields] = useState([]);
@@ -21,6 +22,7 @@ export default function Certificate() {
             const { data, error } = await supabase
                 .from("certificate")
                 .select()
+                .order("created_at", {ascending: false})
 
             if (data) {
                 setFields(data)
@@ -61,7 +63,13 @@ export default function Certificate() {
                         />
                     )
                 }
-                
+                <motion.div
+                    className="category-certif"
+                >
+                    <h1>
+                        <FaStar /> Certificate Favorite
+                    </h1>
+                </motion.div>
                 <motion.div 
                     className="content-certif"
                     variants={contentVariants}
@@ -75,7 +83,36 @@ export default function Certificate() {
                             }}>
                                 <div className="content-certif-card-header">
                                     <h2>{field.title}</h2>
-                                    <p>#{field.tech_name.replace(" ", "").replace(",", " #")}</p>
+                                    <p>#{field.tech_name.replace(/, /g, ",").replace(/,/g, " #")}</p>
+                                </div>
+                                <div className="content-certif-card-img">
+                                    <img src= {`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${field.image_path}`} />
+                                </div>
+                            </div>
+                        ))
+                    }
+                </motion.div>
+                <motion.div
+                    className="category-certif"
+                >
+                    <h1>
+                        All Certificate
+                    </h1>
+                </motion.div>
+                <motion.div 
+                    className="content-certif"
+                    variants={contentVariants}
+                    initial='hidden'
+                    animate='visible'>
+                    {
+                        fields.map((field) => (
+                            <div className="content-certif-card" key={field.id} onClick={() => {
+                                setOpenModal(true)
+                                setDataCertifPdf(field.pdf_path)
+                            }}>
+                                <div className="content-certif-card-header">
+                                    <h2>{field.title}</h2>
+                                    <p>#{field.tech_name.replace(/, /g, ",").replace(/,/g, " #")}</p>
                                 </div>
                                 <div className="content-certif-card-img">
                                     <img src= {`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${field.image_path}`} />

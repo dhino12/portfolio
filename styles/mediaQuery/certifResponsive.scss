@@ -29,6 +29,10 @@
         }
     }
     .container-certif {
+        .category-certif {
+            font-size: 2vw;
+            padding-left: 18vw;
+        }
         .content-certif {
             width: 100%;
             padding-left: 12vw;
@@ -36,12 +40,25 @@
         }
     }
 }
-
+@media only screen and(min-width: 562px) and (max-width: 1278px) {
+    object {
+        p {
+            display: none;
+        }
+    }
+    .show-iframe-mobile {
+        display: block;
+    }
+}
 @media only screen and(max-width: 562px) {
     .sayHello {
         display: none !important;
     }
     .container-certif {
+        .category-certif {
+            font-size: 3vw;
+            padding-left: 18vw;
+        }
         .content-certif {
             width: unset;
             padding-left: 18vw;

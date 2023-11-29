@@ -45,6 +45,9 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+          <meta name="description" content="Restaurant-Catalogue"/>
+          <link rel="preconnect" href="https://restaurant-api.dicoding.dev"></link>
           <title>Dhino Rahmad</title>
         </Head>
         <Layout>
