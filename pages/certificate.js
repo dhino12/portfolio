@@ -79,13 +79,16 @@ export default function Certificate() {
                         fields
                             .filter((field) => field.is_favorite)
                             .map((field) => (
-                                <div className="content-certif-card" key={field.id} onClick={() => handleFieldClick(field)}>
+                                <div className="content-certif-card" key={field.id} onClick={() => {
+                                    setOpenModal(true)
+                                    setDataCertifPdf(field.pdf_path)
+                                }}>
                                     <div className="content-certif-card-header">
-                                    <h2>{field.title}</h2>
-                                    <p>#{field.tech_name.replace(/, /g, ",").replace(/,/g, " #")}</p>
+                                        <h2>{field.title}</h2>
+                                        <p>#{field.tech_name.replace(/, /g, ",").replace(/,/g, " #")}</p>
                                     </div>
                                     <div className="content-certif-card-img">
-                                    <img src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${field.image_path}`} />
+                                        <img src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${field.image_path}`} />
                                     </div>
                                 </div>
                             ))                    
