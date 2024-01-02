@@ -35,7 +35,8 @@
         }
         .content-certif {
             width: 100%;
-            padding-left: 12vw;
+            margin-right: 10vh;
+            right: 2vh;
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -61,15 +62,14 @@
         }
         .content-certif {
             width: unset;
-            padding-left: 18vw;
-            padding-right: 10vw;
+            right: 3vh;
+            margin-right: 0;
+            padding-left: 12vw; 
             grid-template-columns: repeat(1, 1fr);
 
-            .card {
-                width: 81vw;
-
+            .content-certif-card-header {
                 h2 {
-                    font-size: 5vw;
+                    font-size: 3vh;
                 }
 
                 p {

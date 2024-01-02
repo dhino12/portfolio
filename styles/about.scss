@@ -3,6 +3,11 @@
     color: white;
     margin-bottom: 10vh;
 
+    ::selection{
+        background-color: #0aff9d;
+        color: #1f2b38;
+    }
+
     .container {
         height: auto;
     }

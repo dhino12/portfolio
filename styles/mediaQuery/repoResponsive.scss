@@ -81,6 +81,17 @@
 }
 
 @media only screen and(max-width: 562px) {
+
+    .repo__container {
+        .repo_content {
+            width: 80vw;
+
+            .repo_content_cover {
+                height: 30vh !important;
+            }
+        }
+    }
+
     .repo-responsive {
         // height: 355vh;
 

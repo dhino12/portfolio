@@ -19,7 +19,7 @@ export default function ModalPdf({ pdf, setOpenModal }) {
         >
             <object data={pdf} type="application/pdf" width="100%" height="500px">
                 <p>Unable to display PDF file. <a href={pdf} style={{color: 'blueviolet'}}>Download</a> instead.</p>
-                <iframe name="viewer" src ={pdf} width="100%" height="100%" className="show-iframe-mobile" allowfullscreen webkitallowfullscreen ></iframe>
+                <iframe name="viewer" src={pdf} width="100%" height="100%" className="show-iframe-mobile" allowfullscreen webkitallowfullscreen ></iframe>
             </object>
         </Modal>
     );

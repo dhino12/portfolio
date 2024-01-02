@@ -198,16 +198,19 @@
         .container {  
             .about__header {
                 width: 100%;
-                padding-left: 19vw;
+                padding-left: 10vw;
                 padding-right: 8vw;
 
                 h1 {
-                    font-size: 4rem;
+                    font-size: 3rem;
+                }
+                h3 {
+                    font-size: 2.5vh;
                 }
             }
 
             .about__myActivity_wrapper {
-                padding-left: 19vw;
+                padding-left: 10vw;
                 padding-right: 8vw;
 
                 .about__myActivity_container {
@@ -327,15 +330,22 @@
                         }
                     }
                 }
+
+                .about__myAchievement {
+                    h1 {
+                        font-size: 4vh;
+                        line-height: 2rem;
+                    }
+                }
             }
 
             .about__emailme {  
-                padding-left: 19vw;
+                padding-left: 10vw;
                 padding-right: 8vw; 
                 
                 .about__emailme_text { 
                     h1 {
-                        font-size: 3.5rem; 
+                        font-size: 2rem; 
                     }
                 }
 

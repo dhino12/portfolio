@@ -59,7 +59,7 @@ function Repository({dataRepo}) {
 
                 <div className="repo__container">
                     <div className="repo__header">
-                        <div class="fc-outro-particles">
+                        <div className="fc-outro-particles">
                             <div className="fc-outro-particle -t1 -v1"></div>
                             <div className="fc-outro-particle -t2 -v2"></div>
                             <div className="fc-outro-particle -t1 -v3"></div>
