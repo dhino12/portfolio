@@ -50,7 +50,7 @@ header{
 }
 
 .container { 
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     overflow: hidden;
     
@@ -367,7 +367,7 @@ header{
     }
 
     .content {
-        width: 65vw; 
+        width: 65vw;
         position: fixed;
         transform: translate(-50%, -50%);
         top: 50%;
