@@ -38,7 +38,7 @@ const bottomLeftClicked = {
             ease: 'easeInOut',
         },
         style: {
-            zIndex: 2,
+            zIndex: 10,
         }
     }
 }

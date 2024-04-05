@@ -1,0 +1,289 @@
+/* @tailwind base; */
+/* @tailwind components; */
+@tailwind utilities;
+
+::selection{
+    background-color: #0aff9d;
+    color: #1f2b38;
+}
+.about__container {
+    @apply w-full text-white mb-20;
+}
+.about__header {
+    @apply w-3/4;
+    @apply sm:w-3/4;
+    @apply md:w-1/2 mx-auto my-auto mt-40 relative text-center;
+}
+.about__header p {
+    @apply font-medium leading-8 mt-10 text-justify;
+    @apply md:font-sans md:text-xl;
+}
+.about__header .about__contactMe {
+    @apply w-full m-0 my-8;
+    @apply w-52 md:p-3 flex items-center justify-around bg-transparent border-transparent text-white text-xl transition-all relative;
+}
+.about__header .about__contactMe:hover {
+    @apply border-white cursor-pointer text-xl text-[18px];
+}
+
+/* Activity */
+.about__myActivity_wrapper {
+    @apply w-3/4 mx-auto mb-20;
+    @apply md:mt-20;
+}
+.about__myActivity_wrapper .about__myActivity_container {
+    @apply grid gap-6 mt-20;
+    @apply lg:grid-cols-2 lg:gap-6 lg:mt-20;
+}
+.about__myActivity_wrapper a {
+    transition: all .2s ease;
+}
+.about__myActivity_wrapper a .about__myActivity_content {
+    @apply lg:h-[80vh] px-5 py-10 relative z-10 overflow-hidden;
+    border: 2px solid #ffffff31;
+}
+.about__myActivity_wrapper a .about__myActivity_content p {
+    font-family: Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 25px;
+}
+.about__myActivity_wrapper a .about__myActivity_content .bg-flower {
+    @apply absolute h-full top-0 right-0 -z-10 opacity-0 transition-all text-black;
+}
+.about__myActivity_wrapper a .about__myActivity_content .bg-logo {
+    @apply absolute max-w-sm min-h-24 bottom-10 right-10 z-10 opacity-0 transition-all text-black;
+}
+.about__myActivity_wrapper a .about__myActivity_content button {
+    @apply pt-4 relative w-full;
+    @apply lg:w-1/2 lg:py-24 lg:absolute bottom-1 bg-transparent text-white border-none flex items-center justify-evenly text-lg font-bold;
+}
+.about__myActivity_wrapper a:nth-child(1):hover .bg-flower {
+    @apply opacity-100; /* opacity: 1 */
+    @apply text-gray-800; /* color: #4c637c */
+}
+
+.about__myActivity_wrapper a:nth-child(1):hover .bg-logo {
+    @apply lg:lg:opacity-100;
+}
+
+.about__myActivity_wrapper a:nth-child(1):hover {
+    @apply bg-gray-800; /* background-color: #1f2b38 */
+    @apply text-white;
+    @apply cursor-pointer;
+
+    button {
+        @apply text-white;
+
+        svg {
+            @apply bg-black;
+            @apply text-white;
+            @apply rounded-full; /* border-radius: 50% */
+        }
+    }
+} 
+.about__myActivity_wrapper a:nth-child(2):hover .bg-flower {
+    @apply opacity-100; /* opacity: 1 */
+    @apply text-[#a4c9d8]; /* color: #a4c9d8 */
+}
+
+.about__myActivity_wrapper a:nth-child(2):hover .bg-logo {
+    @apply lg:opacity-100;
+    @apply text-[#4c637c]; /* color: #4c637c */
+}
+.about__myActivity_wrapper a:nth-child(2):hover {
+    @apply bg-[#3e8ef1]; /* background-color: #3e8ef1 */
+    @apply text-black;
+    @apply cursor-pointer;
+
+    button {
+        @apply text-black;
+
+        svg {
+            @apply bg-black;
+            @apply text-white;
+            @apply rounded-full; /* border-radius: 50% */
+        }
+    }
+} 
+.about__myActivity_wrapper a:nth-child(3):hover .bg-flower {
+    @apply opacity-100; /* opacity: 1 */
+    @apply text-[#fb7ea8]; /* color: #fb7ea8 */
+}
+
+.about__myActivity_wrapper a:nth-child(3):hover .bg-logo {
+    @apply lg:opacity-100;
+    @apply text-[#4c637c]; /* color: #4c637c */
+}
+
+.about__myActivity_wrapper a:nth-child(3):hover {
+    @apply bg-white; /* background-color: white */
+    @apply text-black;
+    @apply cursor-pointer;
+
+    button {
+        @apply text-black;
+
+        svg {
+            @apply bg-black;
+            @apply text-white;
+            @apply rounded-full; /* border-radius: 50% */
+        }
+    }
+} 
+.about__myActivity_wrapper a:nth-child(4):hover .bg-flower {
+    @apply opacity-100; /* opacity: 1 */
+    @apply text-[#fb7ea8]; /* color: #fb7ea8 */
+}
+
+.about__myActivity_wrapper a:nth-child(4):hover .bg-logo {
+    @apply lg:opacity-100;
+    @apply text-[#4c637c]; /* color: #4c637c */
+}
+
+.about__myActivity_wrapper a:nth-child(4):hover {
+    @apply bg-[#ffbc4b]; /* background-color: #ffbc4b */
+    @apply text-black;
+    @apply cursor-pointer;
+
+    button {
+        @apply text-black;
+
+        svg {
+            @apply bg-black;
+            @apply text-white;
+            @apply rounded-full; /* border-radius: 50% */
+        }
+    }
+}
+
+/* Experience */
+.about__myExperience_content_img {
+    @apply md:h-[85vh] md:w-full; /* height: 80vh */
+    @apply overflow-hidden;
+    @apply col-span-3; /* grid-row: span 3 */
+    @apply border-2 border-opacity-25 border-white; /* 2px solid #ffffff31 */
+}
+
+/* Styles for .about__myExperience_content */
+.about__myExperience_content h1,
+.about__myExperience_content h3 {
+    @apply transition-all duration-300 ease-in-out; /* transition: all .3s ease */
+}
+
+.about__myExperience_content:hover h1,
+.about__myExperience_content:hover h3 {
+    @apply cursor-pointer;
+    text-shadow: .5px .5px #0aff9d;
+}
+
+.about__myExperience_content:hover button {
+    @apply text-black;
+
+    svg {
+        @apply bg-black;
+        @apply text-white;
+        @apply rounded-full; /* border-radius: 50% */
+    }
+}
+
+.about__myExperience_content h1::after {
+    @apply content-[""]; /* content: ""; */
+    @apply bg-green-400; /* background-color: #0aff9d */
+    @apply w-0; /* width: 0 */
+    @apply h-1; /* height: 5px */
+    @apply absolute;
+    @apply -z-10; /* z-index: -1 */
+    @apply bottom-6; /* bottom: 25px */
+    @apply left-0; /* left: 0 */
+    @apply transition-all duration-300 ease-in-out; /* transition: width .3s ease */
+}
+
+.about__myExperience_content:hover h1::after {
+    @apply w-4/5; /* width: 80% */
+}
+
+/* Achivement */
+.about__myActivity_wrapper .about__myAchievement {
+    @apply text-center leading-9;
+}
+.about__myActivity_wrapper .about__myExperience_content {
+    @apply mb-10 rounded-md relative z-10 leading-6;
+}
+
+/* 
+    Email - Me
+*/
+.about__emailme {
+    @apply mx-10;
+    @apply my-40 lg:ps-32 lg:pe-24 flex flex-col;
+}
+.about__emailme .about__emailme_text {
+    @apply text-xl leading-tight mb-10;
+    @apply w-full lg:text-3xl lg:mb-40 lg:leading-tight capitalize;
+}
+.about__emailme .about__emailme_form {
+    @apply flex justify-between;
+}
+.about__emailme p, .about__emailme_form {
+    @apply lg:w-1/2 lg:me-0 lg:ms-auto text-gray-500;
+}
+.about__emailme .about__emailme_form {
+    @apply lg:mr-0 lg:mt-24 mb-10;
+    border-bottom: 1px solid white;
+}
+.about__emailme .about__emailme_form textarea {
+    @apply w-full;
+    @apply bg-transparent; /* Background color transparent */
+    @apply border-0; /* No border */
+    @apply leading-10; /* Line height 3rem (12/3=4) */
+    @apply text-white; /* Text color white */
+    @apply text-lg; /* Font size 1.5rem */
+    @apply font-sans; /* Font family sans-serif */
+}
+.about__emailme .about__emailme_form textarea:focus {
+    @apply outline-none; /* Remove outline on focus */
+}
+.about__emailme .about__emailme_form button {
+    @apply bg-transparent; /* Background color transparent */
+    @apply border-0; /* No border */
+    @apply text-white; /* Text color white */
+    @apply font-semibold; /* Font weight 600 */
+    @apply text-base; /* Font size 1rem */
+    @apply cursor-pointer; /* Cursor as pointer */
+    @apply inline-block;
+    @apply py-2 px-4; /* Padding 10px */
+}
+.about__emailme .about__emailme_form button:hover {
+    @apply border-t-2 border-white; /* Add 2px solid white border on top on hover */
+}
+
+/* styles.css */
+
+/* Styles for .active */
+.active {
+    @apply cursor-pointer;
+    text-shadow: .5px .5px #0aff9d;
+}
+
+.active button {
+    @apply text-black;
+
+    svg {
+        @apply bg-black;
+        @apply text-white;
+        @apply rounded-full; /* border-radius: 50% */
+    }
+}
+
+.active h1::after {
+    @apply content-[""]; /* content: ""; */
+    @apply bg-green-400; /* background-color: #0aff9d */
+    @apply h-1; /* height: 5px */
+    @apply absolute;
+    @apply -z-10; /* z-index: -1 */
+    @apply bottom-6; /* bottom: 25px */
+    @apply left-0; /* left: 0 */
+    @apply transition-all duration-300 ease-in-out; /* transition: width .3s ease */
+}

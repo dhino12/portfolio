@@ -1,6 +1,7 @@
 // import Image from "next/image"; not support static next
-import Lottie from "lottie-react";
 import Link from "next/link";
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import { motion } from "framer-motion";
 import Sosmed from "../components/Sosmed";
 import Header from "../components/header";

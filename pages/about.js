@@ -136,10 +136,10 @@ export default function About() {
 
                 <header className="about__header">
                     <Reveal margin="0 auto">
-                        <h1>About Me</h1>
+                        <h1 className="text-[3em] md:text-[6em]">About Me</h1>
                     </Reveal>
                     <Reveal>
-                        <h3>{fields.descpersonal}</h3>
+                        <p>{fields.descpersonal}</p>
                     </Reveal>
                     <Reveal slide="false" margin="0 auto">
                         <button className="about__contactMe">
@@ -157,13 +157,13 @@ export default function About() {
                                 <a href={activityData.link} target="_blank" rel="noopener noreferrer">
                                     <RevealMoveUp className="about__myActivity_content">
                                         <Reveal slide="false">
-                                            <h1>{activityData.title}</h1>
+                                            <h1 className="text-4xl mb-10">{activityData.title}</h1>
                                         </Reveal>
                                         <Reveal slide="false">
                                             <h3>{activityData.tech_name}</h3>
                                         </Reveal>
                                         <Reveal slide="false">
-                                            <p>{activityData.description}</p>
+                                            <p className="line-clamp-5 text-justify lg:line-clamp-none">{activityData.description}</p>
                                         </Reveal>
                                         <img
                                             src={activityData.image}
@@ -253,7 +253,7 @@ export default function About() {
                             </h1>
                         </div>
                         <div className="about__emailme_form">
-                            <input placeholder="You can write something here" />
+                            <textarea placeholder="You can write something here" />
                             <button>SEND</button>
                         </div>
                         <p>
