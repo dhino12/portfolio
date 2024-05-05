@@ -101,9 +101,7 @@
         @apply text-black;
 
         svg {
-            @apply bg-black;
-            @apply text-white;
-            @apply rounded-full; /* border-radius: 50% */
+            
         }
     }
 } 
@@ -126,9 +124,7 @@
         @apply text-black;
 
         svg {
-            @apply bg-black;
-            @apply text-white;
-            @apply rounded-full; /* border-radius: 50% */
+            
         }
     }
 } 
@@ -151,9 +147,7 @@
         @apply text-black;
 
         svg {
-            @apply bg-black;
-            @apply text-white;
-            @apply rounded-full; /* border-radius: 50% */
+            
         }
     }
 }
