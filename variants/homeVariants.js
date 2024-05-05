@@ -55,7 +55,7 @@ const contentVariants = {
     },
     visible: {
         opacity: 1,
-        height: 454,
+        height: 495,
         transition: {
             type: "spring",
             mass: 1.9,
