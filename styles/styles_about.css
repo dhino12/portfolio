@@ -77,9 +77,6 @@
         @apply text-white;
 
         svg {
-            @apply bg-black;
-            @apply text-white;
-            @apply rounded-full; /* border-radius: 50% */
         }
     }
 } 
