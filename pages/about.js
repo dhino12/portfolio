@@ -238,7 +238,7 @@ export default function About() {
                                     </article>
                                 ))}
                             </div>
-                            <div>
+                            <div >
                                 <article className="about__myExperience_content_img">
                                     <Slider images={bgIntern} />
                                 </article>
