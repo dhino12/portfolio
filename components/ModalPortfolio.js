@@ -91,7 +91,7 @@ export default function ModalPortfolio({
                             )}
                             {!image.files && (
                                 <Image
-                                    src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/${
+                                    src={`https://otyewvxgwwbuqtqdnbxm.supabase.co/storage/v1/object/public/images/${
                                         image == "" ? "empty.png" : image
                                     }`}
                                     width={100}

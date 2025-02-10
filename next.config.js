@@ -5,7 +5,7 @@ module.exports = {
     loader: 'akamai',
     path: '',
     domains: [
-        'gjamaowmsyukioirshbv.supabase.co',
+        'otyewvxgwwbuqtqdnbxm.supabase.co',
         "localhost",
         "https://dhino12.netlify.app/"
     ],

@@ -8,7 +8,7 @@ export default function CardPortfolio({ image, title, techName, link, children }
                 <div className="repo_content_cover">
                     <img style={{
                         display: 'block',
-                        background: `url('https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/${image}') center top / cover no-repeat`,
+                        background: `url('https://otyewvxgwwbuqtqdnbxm.supabase.co/storage/v1/object/public/images/${image}') center top / cover no-repeat`,
                         width: '100%',
                         height: '100%',
                     }} loading="lazy" />

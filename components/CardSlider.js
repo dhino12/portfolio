@@ -1,25 +1,22 @@
 import { useState } from "react";
-import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react"
+import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
 
 function CardSlider({ data, children }) {
     return (
         <div className="repo_content">
             <a target="_blank" rel="noopener noreferrer">
                 <div className="repo_content_cover">
-                    <Slider
-                        images={data.image_path}
-                    />
+                    <Slider images={data.image_path} />
                 </div>
                 <div className="repo_content_main">
                     <h2>{data.company_name}</h2>
                     <p>{data.tech_name}</p>
                 </div>
-           </a>
-           {children}
+            </a>
+            {children}
         </div>
-    )
+    );
 }
-
 
 function Slider({ images }) {
     const [imageIndex, setImageIndex] = useState(0);
@@ -37,7 +34,7 @@ function Slider({ images }) {
             return index - 1;
         });
     }
-    
+
     return (
         <section
             aria-label="Image Slider"
@@ -54,7 +51,7 @@ function Slider({ images }) {
                 {images.map((url, index) => (
                     <img
                         key={url}
-                        src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/${url}`}
+                        src={`https://otyewvxgwwbuqtqdnbxm.supabase.co/storage/v1/object/public/images/${url}`}
                         alt={url}
                         aria-hidden={imageIndex !== index}
                         className="img-slider-img"
@@ -108,4 +105,4 @@ function Slider({ images }) {
     );
 }
 
-export {CardSlider, Slider}
+export { CardSlider, Slider };

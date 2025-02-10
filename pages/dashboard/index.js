@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/router"; 
 
 import supabase from "../../libs/supabaseClient";
 import { Auth } from "@supabase/auth-ui-react";

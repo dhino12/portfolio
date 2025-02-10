@@ -95,7 +95,7 @@ export default function ModalCertificate({
                             )}
                             {!image.files && (
                                 <Image
-                                    src={`https://gjamaowmsyukioirshbv.supabase.co/storage/v1/object/public/images/certificate/${
+                                    src={`https://otyewvxgwwbuqtqdnbxm.supabase.co/storage/v1/object/public/images/certificate/${
                                         image == "" ? "empty.png" : image
                                     }`}
                                     width={100}
@@ -104,7 +104,7 @@ export default function ModalCertificate({
                                 />
                             )}
                             <div>
-                                <label for="upload-photo">Browse...</label>
+                                <label htmlFor="upload-photo">Browse...</label>
                                 <p>
                                     {image.name?.match(
                                         /([^\\]+)(?=\.\w+$)/
@@ -148,7 +148,7 @@ export default function ModalCertificate({
                                 </p>
                             </span>
                             <div>
-                                <label for="upload-pdf">Browse...</label>
+                                <label htmlFor="upload-pdf">Browse...</label>
                             </div>
                             <input
                                 id="upload-pdf"

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { MdDeleteForever } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import bgProfile from "../../public/asset/webp/bg-repo.png"
-import Dashboard from "../../layouts/Dashboard";
 import supabase from "../../libs/supabaseClient";
 import ModalActivity from "../../components/ModalActivity";
 import { useRouter } from "next/router";
@@ -34,6 +33,8 @@ export default function Personal() {
                 .single()
 
             if (data) {
+                console.log(data);
+                
                 setFields({
                     name: data.name,
                     birthday: data.birthday,
@@ -148,6 +149,7 @@ export default function Personal() {
     }
 
     async function addActivity({ title, tech_name, link, description, image }) {
+        
         const { data, error } = await supabase
             .from("activity")
             .insert({
@@ -334,5 +336,3 @@ export default function Personal() {
         </>
     )
 }
-
-Personal.layout = Dashboard
