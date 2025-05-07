@@ -83,6 +83,8 @@ export default function About() {
                 .from("user_information")
                 .select(`*, activity (*),  experience (*)`)
                 .single();
+            console.log(data);
+            
 
             if (data) {
                 setFields({
@@ -157,7 +159,7 @@ export default function About() {
                                 <a href={activityData.link} target="_blank" rel="noopener noreferrer">
                                     <RevealMoveUp className="about__myActivity_content">
                                         <Reveal slide="false">
-                                            <h1 className="text-4xl mb-10">{activityData.title}</h1>
+                                            <h1 className="lg:text-4xl mb-10">{activityData.title}</h1>
                                         </Reveal>
                                         <Reveal slide="false">
                                             <h3>{activityData.tech_name}</h3>
@@ -180,9 +182,9 @@ export default function About() {
                                         >
                                             <path d="M917 37C676-335 116-241 659 451c-341 163-469 452 54 274-183 343-167 767 205 148 64 226 451 601 338-271 267 16 526-234 183-322 184-141-125-226-277-6 131-515 35-890-245-237z"></path>
                                         </svg>
-                                        <button>
+                                        {/* <button>
                                             VIEW DETAIL <BsArrowUpRightCircle />{" "}
-                                        </button>
+                                        </button> */}
                                     </RevealMoveUp>
                                 </a>
                             ))}

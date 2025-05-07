@@ -26,7 +26,7 @@ export default function MySkill() {
 
                 <div className="content-myskill frame">
                     <div className="skill">
-                        <center><h2>Front-end Developer</h2></center>
+                        <center><h2>Back-end Developer</h2></center>
                         <p>{mySkill.desc}</p>
                         <h2>Skill</h2>
                         <p>{mySkill.skills}</p>

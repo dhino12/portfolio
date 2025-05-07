@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { sosmedVariants, sosmedWrapperVariants } from "../variants/homeVariants"
 import { BsGithub, BsTelegram, BsTwitter } from "react-icons/bs";
+import { FaGitlab } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 export default function Sosmed () {
@@ -10,6 +11,13 @@ export default function Sosmed () {
             className="sosmed"
             variants={sosmedWrapperVariants}
         >
+            <motion.div variants={sosmedVariants}>
+                <Link href="https://gitlab.com/dhino12">
+                    <a>
+                        <FaGitlab />
+                    </a>
+                </Link>
+            </motion.div>
             <motion.div variants={sosmedVariants}>
                 <Link href="https://github.com/Dhino12">
                     <a>

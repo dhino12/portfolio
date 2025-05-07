@@ -33,13 +33,14 @@
 }
 .about__myActivity_wrapper .about__myActivity_container {
     @apply grid gap-6 mt-20;
-    @apply lg:grid-cols-2 lg:gap-6 lg:mt-20;
+    @apply md:grid-cols-2; /* 2 kolom saat medium ke atas */
 }
 .about__myActivity_wrapper a {
     transition: all .2s ease;
 }
 .about__myActivity_wrapper a .about__myActivity_content {
-    @apply lg:h-[40rem] px-5 py-10 relative z-10 overflow-hidden;
+    @apply px-4 py-6 md:px-6 md:py-10 relative z-10 overflow-hidden;
+    @apply h-auto md:h-[40rem];
     border: 2px solid #ffffff31;
 }
 .about__myActivity_wrapper a .about__myActivity_content p {
@@ -53,7 +54,7 @@
     @apply absolute h-full top-0 right-0 -z-10 opacity-0 transition-all text-black;
 }
 .about__myActivity_wrapper a .about__myActivity_content .bg-logo {
-    @apply absolute max-w-sm min-h-24 bottom-10 right-10 z-10 opacity-0 transition-all text-black;
+    @apply absolute max-w-xs min-h-24 bottom-10 right-10 z-10 opacity-0 transition-all text-black;
 }
 .about__myActivity_wrapper a .about__myActivity_content button {
     @apply pt-4 relative w-full;
